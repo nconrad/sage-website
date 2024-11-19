@@ -136,12 +136,12 @@ export default function Home() {
       <div className="bg-white">
         <Section>
           <div className="flex flex-col md:flex-row gap-10 md:gap-4 xl:gap-10">
-            <Link to="/science" className="card">
+            <Link to="/science/category/recent-projects" className="card">
               <img src={require('@site/static/img/home/learn.jpg').default} />
               <h3 className="flex items-center gap-2">
                 <LearnIcon />Learn
               </h3>
-              <p>Explore some of the <Link to="/science">science</Link> made possible with Sage</p>
+              <p>Explore some of the <Link to="/science/category/recent-projects">science</Link> made possible with Sage</p>
             </Link>
             <a href={`${portal}/apps`} className="card">
               <img src={require('@site/static/img/home/create-app.png').default} />
@@ -312,7 +312,7 @@ export default function Home() {
 
               <div className="hidden md:flex justify-between mx-5">
                 <Link to="/publications" className="focused-link gap-1">Publications <Arrow /></Link>
-                <Link to="/science" className="focused-link gap-1">Science<Arrow /></Link>
+                <Link to="/science/category/recent-projects" className="focused-link gap-1">Science<Arrow /></Link>
                 <a href={`${portal}/apps`} className="focused-link gap-1">Apps <Arrow /></a>
               </div>
             </div>
