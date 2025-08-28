@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 
 import { Highlight, themes } from 'prism-react-renderer'
 
@@ -21,9 +20,9 @@ export default function CodeWindow(props: Props) {
   } = props
 
   return (
-    <Root>
-      <div className="code-window shadow-2xl text-[.9em]">
-        <div className="bg-gray-200 dark:bg-gray-800 flex flex-row justify-start items-center p-2 rounded-t-md gap-2">
+    <div className="w-full">
+      <div className="shadow-2xl text-[.9em] rounded-xl overflow-hidden bg-white dark:bg-gray-900">
+        <div className="bg-gray-200 dark:bg-gray-800 flex flex-row justify-start items-center p-2 rounded-t-xl gap-2">
           <div className="flex flex-row left-2 top-2">
             <div className="bg-red-500 h-3 mr-2 rounded-full w-3"></div>
             <div className="bg-yellow-500 h-3 mr-2 rounded-full w-3"></div>
@@ -39,16 +38,16 @@ export default function CodeWindow(props: Props) {
           }
           {showUrlBar &&
             <div className="flex flex-col">
-              <div className="w-[18px] h-[3px] my-[1px] bg-[#aaa]"></div>
-              <div className="w-[18px] h-[3px] my-[1px] bg-[#aaa]"></div>
-              <div className="w-[18px] h-[3px] my-[1px] bg-[#aaa]"></div>
+              <div className="w-[18px] h-[3px] my-px bg-[#aaa]"></div>
+              <div className="w-[18px] h-[3px] my-px bg-[#aaa]"></div>
+              <div className="w-[18px] h-[3px] my-px bg-[#aaa]"></div>
             </div>
           }
         </div>
         {code &&
           <Highlight theme={themes.dracula} language={language} code={code}>
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
-              <pre className={className} style={style}>
+              <pre className={className + ' rounded-b-xl'} style={style}>
                 {tokens.map((line, i) => (
                   <div key={i} {...getLineProps({ line, key: i })}>
                     {line.map((token, key) => (
@@ -62,19 +61,11 @@ export default function CodeWindow(props: Props) {
         }
         {src &&
           <div className="rounded-b-xl">
-            <img src={src} />
+            <img src={src} className="w-full object-contain" />
           </div>
         }
       </div>
-    </Root>
+    </div>
   )
 }
 
-
-const Root = styled.div`
-  .code-window {
-    .prism-code {
-      border-radius: 0px 0px 0.75rem 0.75rem;
-    }
-  }
-`

@@ -35,8 +35,7 @@ export default {
       logo: {
         alt: 'Site Logo',
         src: 'img/logo.png',
-        srcDark: 'img/logo_dark.svg',
-        className: 'custom-navbar-logo-class',
+        // srcDark: 'img/logo_dark.svg'
       },
       items: [
         {
@@ -221,7 +220,7 @@ export default {
         name: 'docusaurus-tailwindcss',
         configurePostCss(postcssOptions) {
           // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require('tailwindcss'))
+          postcssOptions.plugins.push(require('@tailwindcss/postcss'))
           postcssOptions.plugins.push(require('autoprefixer'))
           return postcssOptions
         },
