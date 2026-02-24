@@ -77,10 +77,10 @@ export const labProjects: LabProject[] = [
   },
   {
     id: 'volcano-fire-anomaly',
-    title: 'Volcano, Fire, and Anomaly Detection (coming soon!)',
+    title: 'Volcano, Fire, and Anomaly Detection',
     description: 'Detecting volcanic activity, fire, and anomalies using advanced AI models and edge computing.',
     image: HawaiiImg,
-    imageAlt: 'screenshot of volcano alongside thermal view of volcano',
+    imageAlt: 'view of volcano from node in Hawaii',
     // primaryButton: {
     //   text: 'Try It Now',
     //   url: 'https://some_url_or_portal_link_here',
