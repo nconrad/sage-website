@@ -146,14 +146,16 @@ export default function Home() {
       </div>
 
       {/* (matching announcement banner styling) */}
+      {/*
       <div className="flex items-center justify-center gap-4 flex-wrap px-4 py-3" style={{backgroundColor: 'rgb(229, 246, 253)', color: 'rgb(1, 67, 97)'}}>
         <Link
-          to="/docs/events/2026-Sage-Summer-Hackathon"
+          to={"link_here"}
           style={{marginRight: 4, padding: '8px 14px', borderRadius: 999, background: 'linear-gradient(90deg, #ff7a18 0%, #ff3d00 100%)', color: '#ffffff', fontWeight: 800, letterSpacing: '0.02em', textDecoration: 'none', boxShadow: '0 2px 8px rgba(255, 61, 0, 0.35)'}}
         >
-          Join the 2026 Student Summer Hackathon!
+          Join us at the Workshop
         </Link>
       </div>
+      */}
 
       <div className="bg-white">
         <Section>

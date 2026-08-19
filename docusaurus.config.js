@@ -153,14 +153,6 @@ export default {
         groupByYear: false // Disable year grouping
       }
     },
-    announcementBar: {
-      id: 'summer-hackathon-2026', // used for tracking and dismissal, must be unique
-      content: '<b><a href="/docs/events/2026-Sage-Summer-Hackathon" style="margin-right: 16px; padding: 8px 14px; border-radius: 999px; background: linear-gradient(90deg, #ff7a18 0%, #ff3d00 100%); color: #ffffff; font-weight: 800; letter-spacing: 0.02em; text-decoration: none; box-shadow: 0 2px 8px rgba(255, 61, 0, 0.35);">Join the 2026 Student Summer Hackathon!</a>' +
-      '<a href="/use-cases/fire" style="font-weight: 700; text-decoration: underline; text-underline-offset: 2px;">Call for Collaboration: Harnessing AI @ the Edge for Fire Science</a></b>',
-      isCloseable: true,
-      textColor: 'rgb(1, 67, 97)',
-      backgroundColor: 'rgb(229, 246, 253)',
-    },
     /* uncomment the following to add a banner for outages/alerts or important news, see custom.css for more styling
     announcementBar: {
       content: '<b>ℹ️ Due to a planned data center migration, the Sage portal, web services, and nodes may be offline for extended periods. ℹ️</b>',
