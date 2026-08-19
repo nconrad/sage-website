@@ -9,9 +9,10 @@ const url = `https://www.googleapis.com/calendar/v3/calendars/${calID}/events?ke
 const OFFICE_HOURS_COUNT = 3
 
 // Event IDs to always show, even if they fall outside the normal fetch window.
-// Add new IDs here to pin important future events (e.g. hackathons, workshops).
-const PINNED_EVENT_IDS = [
-  '4ld0b9jdcqt8ofkvqt32c6dea3',  // Sage Grande Summer of AI Hack and Build (Jul 20–29, 2026)
+// Add entries here to pin important future events (e.g. hackathons, workshops).
+// `until` is optional; when set, the pin is dropped automatically after that date.
+const PINNED_EVENTS: {id: string, until?: string}[] = [
+  // {id: '4ld0b9jdcqt8ofkvqt32c6dea3', until: '2026-07-29'},  // Sage Grande Summer of AI Hack and Build (Jul 20–29, 2026)
 ]
 
 // Max non-office-hours, non-pinned events to include
@@ -88,19 +89,20 @@ export default function Calendar() {
     const officeHours = pool.filter(e => e.summary === 'Office Hours').slice(0, OFFICE_HOURS_COUNT)
     const otherEvents = pool.filter(e => e.summary !== 'Office Hours').slice(0, MAX_OTHER_EVENTS)
 
-    // 3. Fetch any pinned events not already present in the pool
+    // 3. Fetch any pinned events not already present in the pool or expired
     const poolIds = new Set(pool.map(e => e.id))
+    const now = Date.now()
     const pinnedEvents = (
       await Promise.all(
-        PINNED_EVENT_IDS
-          .filter(id => !poolIds.has(id))
-          .map(id =>
+        PINNED_EVENTS
+          .filter(({id, until}) => !poolIds.has(id) && (!until || Date.parse(until) >= now))
+          .map(({id}) =>
             fetch(`https://www.googleapis.com/calendar/v3/calendars/${calID}/events/${id}?key=${apiKey}`)
               .then(r => r.json())
               .catch(() => null)
           )
       )
-    ).filter(Boolean)
+    ).filter(event => event?.start)
 
     // 4. Merge, deduplicate by ID, and sort
     const seen = new Set<string>()
