@@ -19,3 +19,7 @@ import {getTeam} from './directory';
 ## Platform
 
 <Team team="platform" />
+
+## Emeritus
+
+<Team team="emeritus" />

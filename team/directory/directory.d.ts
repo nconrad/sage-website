@@ -1,5 +1,5 @@
 
-export type Team = 'leadership' | 'collab' | 'ci' | 'ai' | 'platform' | 'past-collab' | 'past-member' | 'advisory'
+export type Team = 'leadership' | 'collab' | 'ci' | 'ai' | 'platform' | 'past-collab' | 'past-member' | 'advisory' | 'emeritus'
 
 export type TeamMember = {
   name: string

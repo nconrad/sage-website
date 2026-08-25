@@ -55,6 +55,13 @@ const team : TeamMember[] = [{
   institution: 'Northwestern University',
   title: 'Executive Director / Project Manager',
   href: 'https://www.linkedin.com/in/helentaaffe/',
+  teams: ['leadership', 'emeritus']
+}, {
+  name: 'Sanaiya Khatwani',
+  image: require('@site/static/img/team/sanaiya-khatwani.jpeg').default,
+  institution: 'Northwestern University',
+  title: 'Senior Program Manager',
+  href: 'https://www.linkedin.com/in/sanaiya-khatwani-98667219/',
   teams: 'leadership'
 }, {
   name: 'Rajesh Sankaran',
@@ -62,7 +69,7 @@ const team : TeamMember[] = [{
   institution: 'Northwestern University / ANL',
   title: 'Chief Platform Architect',
   href: 'https://www.anl.gov/profile/rajesh-sankaran',
-  teams: ['leadership', 'platform']
+  teams: ['leadership', 'emeritus']
 }, {
   name: 'Douglas Toomey',
   image: require('@site/static/img/team/doug.webp').default,
@@ -76,7 +83,7 @@ const team : TeamMember[] = [{
   institution: 'University of Chicago / ANL',
   title: 'Education Chair / Curricula',
   href: 'https://www.anl.gov/profile/valerie-e-taylor',
-  teams: 'leadership'
+  teams: ['leadership', 'emeritus']
 }, {
   name: 'Jim Olds',
   image: require('@site/static/img/team/James-Olds-400.jpg').default,
@@ -100,9 +107,9 @@ const team : TeamMember[] = [{
   name: 'Charlie Catlett',
   image: require('@site/static/img/team/charlie_catlett-3.jpg').default,
   institution: 'Argonne National Laboratory',
-  title: 'International AI Collaboration',
+  title: 'Director of Array of Things / International AI Collaboration',
   href: 'https://www.anl.gov/profile/charles-edward-catlett',
-  teams: 'leadership'
+  teams: ['leadership', 'emeritus']
 }, {
   name: 'Scott Collis',
   image: require('@site/static/img/team/scott_collis.jpeg').default,
@@ -239,13 +246,15 @@ const team : TeamMember[] = [{
 
 
 
+const hasTeam = (obj: TeamMember, kind: Team) =>
+  obj.teams == kind || (Array.isArray(obj.teams) && obj.teams.includes(kind))
 
-
-const getTeam = (kind: Team) =>
-  team.filter(obj =>
-    obj.teams == kind || (Array.isArray(obj.teams) && obj.teams.find(v => v == kind))
+const getTeam = (kind: Team, opts?: {exclude?: Team | Team[]}) => {
+  const exclude = opts?.exclude ? (Array.isArray(opts.exclude) ? opts.exclude : [opts.exclude]) : []
+  return team.filter(obj =>
+    hasTeam(obj, kind) && !exclude.some(ex => hasTeam(obj, ex))
   )
-
+}
 
 
 export default team

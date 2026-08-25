@@ -1,14 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 7
 breadcrumbs: false
 ---
 import Team from './components/Team';
 import {getTeam} from './directory';
 
-# Leadership
-
-<Team team="leadership" exclude="emeritus" />
-
-## Emeritus
+# Emeritus
 
 <Team team="emeritus" />

@@ -11,7 +11,7 @@ const TeamCard = (props: TeamMember & {teamName: Team}) => {
           <a href={href} className="block flex items-center justify-center">
             <img
               src={image}
-              className="rounded-md w-[160px] h-[160px]"
+              className="rounded-md w-[160px] h-[160px] object-cover"
 
               alt={name}
               onError={(e) => {
@@ -22,7 +22,7 @@ const TeamCard = (props: TeamMember & {teamName: Team}) => {
           </a> :
           <img
             src={image}
-            className="rounded-md w-[160px] h-[160px]"
+            className="rounded-md w-[160px] h-[160px] object-cover"
             alt={name}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
@@ -45,22 +45,30 @@ const LinkCard = (props: TeamMember & {teamName: Team}) => {
 }
 
 type Props = {
-  team: Team
+  team: Team | Team[]
+  exclude?: Team | Team[]
 }
 
 export default function Team(props: Props) {
-  const { team: teamName } = props
+  const { team: teamName, exclude } = props
 
-  const team = getTeam(teamName)
+  const teamNames = Array.isArray(teamName) ? teamName : [teamName]
+  const team = teamNames
+    .flatMap(t => getTeam(t, {exclude}))
+    .filter((person, i, arr) => arr.findIndex(p => p.name === person.name) === i)
 
   return (
     <div className="w-full">
       <div className="flex flex-wrap -mx-4">
-        {team.map((person) => (
-          <div key={person.name} className="w-full md:w-1/2 px-4 mb-8">
-            <LinkCard {...person} teamName={teamName} />
-          </div>
-        ))}
+        {team.map((person) => {
+          const personTeams = Array.isArray(person.teams) ? person.teams : [person.teams]
+          const matchedTeam = teamNames.find(t => personTeams.includes(t)) ?? personTeams[0]
+          return (
+            <div key={person.name} className="w-full md:w-1/2 px-4 mb-8">
+              <LinkCard {...person} teamName={matchedTeam} />
+            </div>
+          )
+        })}
       </div>
     </div>
   )
