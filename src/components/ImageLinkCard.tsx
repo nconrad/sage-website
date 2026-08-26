@@ -20,7 +20,11 @@ export default function ImageLinkCard(props: LinkCardProps) {
         component={Link}
         to={link}
       >
-        <img src={src} alt={alt} className="max-w-[256px] md:max-w-[220px] md:max-h-[220px]" />
+        <img
+          src={src}
+          alt={alt}
+          className="w-[256px] h-[256px] md:w-[220px] md:h-[220px] object-cover"
+        />
         <h3 className="text-white absolute left-4 bottom-0 z-10">{title}</h3>
       </Card>
     </Root>

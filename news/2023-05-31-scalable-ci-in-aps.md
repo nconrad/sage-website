@@ -4,4 +4,4 @@ hide_reading_time: true
 tags: [edge computing, computer science, computational science, Argonne APS, Sage science]
 ---
 
-Earlier this year, Sage computer science researchers and computational scientists from Argonne's Advanced Photon Source (APS) collaborated to answer the question: Can edge computing be used in X-ray beamline experiments to process high-volume and fast data streams for real-time decision making?  Read more about the experiment [here](/science/recent/scalable-ci-in-aps) under [Sage Science](/science/category/recent-projects).
+Earlier this year, Sage computer science researchers and computational scientists from Argonne's Advanced Photon Source (APS) collaborated to answer the question: Can edge computing be used in X-ray beamline experiments to process high-volume and fast data streams for real-time decision making?  Read more about the experiment [here](/science/2023/scalable-ci-in-aps) under [Sage Science](/science).

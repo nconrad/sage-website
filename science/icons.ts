@@ -32,6 +32,20 @@ const images: Images = {
   'social-distancing': '/img/science/social_distance-icon.jpg',
   'nowcasting-weather': '/img/science/nowcasting-icon.jpg',
   'integrating-chameleon': '/img/science/chameleon_integration-icon.jpg',
+  'sagebat': '/img/science/summer-camp/sagebat.png',
+  'sageair-intelligence': '/img/science/summer-camp/sageair-intelligence.png',
+  'manoomin-detection': '/img/science/summer-camp/manoomin-detection.png',
+  'dangerous-animal-detection': '/img/science/summer-camp/dangerous-animal-detection.png',
+  'drought-early-warning': '/img/science/summer-camp/drought-early-warning.png',
+  'bisonn': '/img/science/summer-camp/bisonn.png',
+  'mortimus-urgent-scheduling': '/img/science/summer-camp/mortimus-urgent-scheduling.png',
+  'sage-bat-counter': '/img/science/summer-camp/sage-bat-counter.png',
+  'sage-flashpoint': '/img/science/summer-camp/sage-flashpoint.png',
+  'image-search-at-the-edge': '/img/science/summer-camp/image-search-at-the-edge.png',
+  'weather-image-classification': '/img/science/summer-camp/weather-image-classification.png',
+  'sage-ndp-scidx-mcp': '/img/science/summer-camp/sage-ndp-scidx-mcp.png',
+  'sage-halow': '/img/science/summer-camp/sage-halow.png',
+  'speech-redaction-at-the-edge': '/img/science/summer-camp/speech-redaction-at-the-edge.png',
 }
 
 export default images

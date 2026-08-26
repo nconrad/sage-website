@@ -85,7 +85,7 @@ export default {
             },
           ],
         }, {
-          to: '/science/category/recent-projects',
+          to: '/science',
           label: 'AI & Science'
         }, {
           to: '/labs',
@@ -219,6 +219,7 @@ export default {
   ],
   plugins: [
     require.resolve('./ignore-html-loader'),
+    require.resolve('./science-index-plugin'),
     async function tailwindConfigPlugin() {
       return {
         name: 'docusaurus-tailwindcss',
@@ -266,9 +267,6 @@ export default {
           }, {
             to: '/use-cases/fire',
             from: ['/fire']
-          }, {
-            to: '/science/category/recent-projects',
-            from: ['/science']
           }, {
             to: '/docs/node-installation-manuals',
             from: ['/docs/category/installation-manuals']
