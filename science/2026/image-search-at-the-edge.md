@@ -1,16 +1,11 @@
 ---
 sidebar_position: 11
 sidebar_label: Image Search at the Edge
-keywords:
-  - Sage Summer Camp
-  - Image Search
-  - Multimodal
-  - Edge Computing
+keywords: [Sage Summer Camp, Image Search, Multimodal, Edge Computing]
+tags: [Sage Summer Camp, Image Search, Multimodal, Edge Computing]
 ---
 
 # Image Search at the Edge
-
-*Sage Grande: Summer of AI 2026*
 
 Image Search at the Edge is an offline-first, multimodal image-search system that runs
 entirely on single **NVIDIA Jetson AGX Thor**. Every image is stored as several
@@ -25,7 +20,7 @@ local vision-language captioner. The generated caption then feeds its own two br
 CLIP text encoder (the caption vector) and a BM25 lexical index. All three representations
 land in the vector database, keyed to the same image.
 
-![Ingestion pipeline](../imgs/summer-camp/image-search-at-the-edge/arch_edge_v2_ingestion.png)
+![Ingestion pipeline](/img/science/image-search-at-the-edge/arch_edge_v2_ingestion.png)
 
 ## Search — querying and fusion
 
@@ -34,7 +29,7 @@ similarity against both the image vector and the caption vector, while the raw q
 drive the BM25 lexical leg. Each leg is normalized independently, then combined with fixed
 fusion weights. The top results come straight out of the fused score.
 
-![Search and fusion](../imgs/summer-camp/image-search-at-the-edge/arch_search_fusion.png)
+![Search and fusion](/img/science/image-search-at-the-edge/arch_search_fusion.png)
 
 ## A newer configuration: long captions
 
@@ -46,7 +41,7 @@ embedder (**jina-clip-v2**, 8192 tokens) removes that ceiling, so the caption ca
 ~250 words *and* be embedded. Captioner "thinking" is turned off since it consumed the
 token budget for no measurable gain, and storage moves to **Qdrant**.
 
-![Long-caption ingestion pipeline](../imgs/summer-camp/image-search-at-the-edge/arch_edge_v3_ingestion.png)
+![Long-caption ingestion pipeline](/img/science/image-search-at-the-edge/arch_edge_v3_ingestion.png)
 
 ## Configurations at a glance
 
@@ -68,9 +63,9 @@ Across five public image-search benchmarks, the edge system is compared against 
 datacenter reference systems on a single composite score. Edge configurations are shown in
 teal.
 
-![Overall primary leaderboard](../imgs/summer-camp/image-search-at-the-edge/chart_primary.png)
+![Overall primary leaderboard](/img/science/image-search-at-the-edge/chart_primary.png)
 
-![Primary + diversity leaderboard](../imgs/summer-camp/image-search-at-the-edge/chart_primary_diversity.png)
+![Primary + diversity leaderboard](/img/science/image-search-at-the-edge/chart_primary_diversity.png)
 
 Despite running fully on-device, the edge baseline ranks **3rd of 6** on the primary
 composite (0.517, within ~0.006 of the top reference systems) and posts the **highest

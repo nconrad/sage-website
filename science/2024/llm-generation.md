@@ -1,9 +1,6 @@
 ---
 sidebar_label: Code Generation and Documentation Search
-keywords:
-    - LLM
-    - RAG
-    - AI
+keywords: [LLM, RAG, AI]
 sidebar_position: 2
 ---
 
@@ -25,19 +22,19 @@ Manual augmentation is the technique of providing context to the model before as
 
 Firstly, it was important to establish a baseline to understand Llama3's extent of familiarity with the Sage project. The following are the baseline results:
 
-|![baseline](../imgs/llm-generation-baseline.png)|
+|![baseline](/img/science/llm-generation/llm-generation-baseline.png)|
 |:--:|
 |*First Baseline Test*|
 
 As you can tell, Llama3 is completely unaware of Sage's work. Attempts to provide more context resulted in equally confused results, often with misinterpreted acronyms:
 
-|![baseline-2](../imgs/llm-generation-baseline-2.png)|
+|![baseline-2](/img/science/llm-generation/llm-generation-baseline-2.png)|
 |:--:|
 |*Second Baseline Test*|
 
 Even when provided large amounts of context, Sage's [about section](https://sagecontinuum.org/about) (486 words, 3291 characters), the model was only capable of reiterating word-for-word the context without any inference. Normally, there's nothing wrong with this behavior, especially if we want the model to serve as a query system, but it became clear this approach was infeasible if we wanted to generate code with text context.
 
-|![sage-about](../imgs/llm-generation-sage-about.png)|
+|![sage-about](/img/science/llm-generation/llm-generation-sage-about.png)|
 |:--:|
 |*Providing Sage About Context*|
 
@@ -75,7 +72,7 @@ As hypothesized, no matter the length of text context, the model was unable to g
 
 We began by using code snippets to 1) test the model's ability to generate code with a few lines of code and 2) assess whether the model could link the finer details of the code to the broader context. It produced these inferences when provided 17 lines of code from Waggle's subscribing and publishing [examples](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#4-create-mainpy-file).
 
-|![plugin-inferences](../imgs/llm-generation-plugin-inferences.png)|
+|![plugin-inferences](/img/science/llm-generation/llm-generation-plugin-inferences.png)|
 |:--:|
 |*Plugin Descriptions*|
 
@@ -136,7 +133,7 @@ Llama3's inferences and code generation showed the following:
 
 Take a look at the model's descriptions of Sage and Waggle with only 17 lines of code as context:
 
-|![sage-waggle-desc](../imgs/llm-generation-sage-waggle-desc.png)|
+|![sage-waggle-desc](/img/science/llm-generation/llm-generation-sage-waggle-desc.png)|
 |:--:|
 |*Descriptions of Sage and Waggle*|
 
@@ -206,7 +203,7 @@ df = sage_data_client.query(
 
 In contrast, when the metadata was cleaned to include only relevant filtering fields, the model generated perfect code, highlighting the significance of maintaining relevant and precise context. Here are some of the graphs it produced when tasked with generating the line plot and histogram of temperature and humidity for the last hour for node W0B0:
 
-|![sdc-plots](../imgs/llm-generation-sdc-plots.png)|
+|![sdc-plots](/img/science/llm-generation/llm-generation-sdc-plots.png)|
 |:--:|
 |*Generated Plots for Node W0B0*|
 
@@ -247,7 +244,7 @@ Notice it maintained the same library and method calls from Waggle in the implem
 
 In a more extreme case, the model was told that those same plugins were instead from a website that sells shoes for a baby. When instructed to generate code, it produced this:
 
-|![confusing-model-shoe-website](../imgs/llm-generation-confusing-model.png)|
+|![confusing-model-shoe-website](/img/science/llm-generation/llm-generation-confusing-model.png)|
 |:--:|
 |*Response to Irrelevant User Query*|
 
@@ -286,7 +283,7 @@ These challenges have been solved using sentence transformers and comparison met
 
 We documented a basic version of this process using cosine similarity and the mxbai-embed-large sentence transformer. The selected context effectively addressed the user query.
 
-|![basic-rag](../imgs/llm-generation-basic-rag.png)|
+|![basic-rag](/img/science/llm-generation/llm-generation-basic-rag.png)|
 |:--:|
 |*Basic RAG Context Retrieval*|
 
@@ -327,11 +324,11 @@ Therefore, we focused on the computational costs, encoding time and generation t
 1. The embedding speed of jina-v2 and mxbai-embed-large with various split sizes and vector databases.
 2. The generation speed of Llama3.1 with different questions at various $k$ values.
 
-|![mxbai-embed-speed](../imgs/llm-generation-mxbai-embed-speed.png)|
+|![mxbai-embed-speed](/img/science/llm-generation/llm-generation-mxbai-embed-speed.png)|
 |:--:|
 |*Embedding Speeds for mxbai-embed-large*|
 
-|![jina-embed-speed](../imgs/llm-generation-jina-v2-embed-speed.png)|
+|![jina-embed-speed](/img/science/llm-generation/llm-generation-jina-v2-embed-speed.png)|
 |:--:|
 |*Embedding Speeds for jina-v2*|
 
@@ -343,7 +340,7 @@ For encoding time, we observed:
 5. No significant difference in embedding times was observed between using Chroma or FAISS as vector databases.
 6. This suggests that the key factors influencing encoding time are the number of splits and the type of embedding model, particularly whether it runs remotely or locally.
 
-|![generation-speeds](../imgs/llm-generation-speeds.png)|
+|![generation-speeds](/img/science/llm-generation/llm-generation-speeds.png)|
 |:--:|
 |*Generation Speeds for Various Questions*|
 

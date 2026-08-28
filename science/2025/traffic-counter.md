@@ -13,7 +13,7 @@ The application first records a video from a camera stream specified in the appl
 
 To estimate the traffic per lane, it is required to draw imaginary lines capturing target lanes from the perspective of camera. Below is the GUI program that takes a camera image and draw lines with their label.
 
-![lanes for counting traffic](../imgs/traffic-counter-1.png)
+![lanes for counting traffic](/img/science/traffic-counter/traffic-counter-1.png)
 
 First, the line "count", drawn in red in the image, represents the imaginary line used to determine whether vehicles that pass the line are counted. This line is required to count vehicles and its name must be "count".
 
@@ -25,7 +25,7 @@ See [the document](https://github.com/waggle-sensor/plugin-trafficcounter/blob/m
 
 ## Lane Matching for Counting
 
-![lane matching for vehicle counting](../imgs/traffic-counter-2.jpg)
+![lane matching for vehicle counting](/img/science/traffic-counter/traffic-counter-2.jpg)
 
 The above image shows the detection and lane matching. The red dots represent vehicle's weighted centroid and are matched to the nearest lane for counting. Their counts are added up throughout the video and reported using the naming from the lane drawing. For example,
 

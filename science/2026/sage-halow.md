@@ -1,16 +1,11 @@
 ---
 sidebar_position: 10
-sidebar_label: Sage-HaLow
-keywords:
-  - Sage Summer Camp
-  - Wi-Fi HaLow
-  - Edge Computing
-  - Low-Power Sensing
+sidebar_label: Long-Range Low-Power Networking
+keywords: [Sage Summer Camp, Wi-Fi HaLow, Edge Computing, Low-Power Sensing]
+tags: [Sage Summer Camp, Wi-Fi HaLow, Edge Computing, Low-Power Sensing]
 ---
 
 # Sage-HaLow — First-Pass Summary
-
-*Sage Grande: Summer of AI 2026*
 
 **Project:** A battery-powered ESP32-S3 camera node that reaches the SAGE data
 repository over Wi-Fi HaLow (802.11ah), at sites with no wired power and no

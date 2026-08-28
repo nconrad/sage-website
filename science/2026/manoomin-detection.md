@@ -1,16 +1,11 @@
 ---
 sidebar_position: 3
 sidebar_label: Manoomin Detection
-keywords:
-  - Sage Summer Camp
-  - Wild Rice
-  - BioCLIP
-  - Phenology
+keywords: [Sage Summer Camp, Wild Rice, BioCLIP, Phenology]
+tags: [Sage Summer Camp, Wild Rice, BioCLIP, Phenology]
 ---
 
 # Manoomin Detection — First-Pass Summary
-
-*Sage Grande: Summer of AI 2026*
 
 **Project:** Using vision models to track wild rice (manoomin / *Zizania palustris*)
 life-stage across a growing season, from a fixed SAGE edge-node camera (W083,
@@ -31,7 +26,7 @@ real data/analysis before scaling to the full multi-year dataset.
 
 | Submerged (May) | Flowering (July) |
 |---|---|
-| ![Submerged manoomin, W083, 2025-05-02](../imgs/summer-camp/manoomin-detection/w083_2025-05-02_submerged.jpg) | ![Flowering manoomin, W083, 2025-07-12](../imgs/summer-camp/manoomin-detection/w083_2025-07-12_flowering.jpg) |
+| ![Submerged manoomin, W083, 2025-05-02](/img/science/manoomin-detection/w083_2025-05-02_submerged.jpg) | ![Flowering manoomin, W083, 2025-07-12](/img/science/manoomin-detection/w083_2025-07-12_flowering.jpg) |
 
 ## Model
 
@@ -48,7 +43,7 @@ stages occupying distinct, contiguous, correctly-ordered regions of that
 trajectory (Submerged → Floating Leaf → Emergent Leaf → Flowering → Seed
 Producing → Shattering → Senescence).
 
-![BioCLIP embeddings colored by day-of-year, tracing the 2025 growing season](../imgs/summer-camp/manoomin-detection/fig1_season.png)
+![BioCLIP embeddings colored by day-of-year, tracing the 2025 growing season](/img/science/manoomin-detection/fig1_season.png)
 
 *PCA of L2-normalized embeddings; PC1 explains 21.9% of variance, PC2 11.9%.
 Spearman correlation with day-of-year: PC1 ρ = -0.57 (p = 6.5e-14), PC2 ρ =

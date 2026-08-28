@@ -8,7 +8,7 @@ Vehicle is one of the most useful and indispensable machines in our lives. Every
 
 With the growth of the Internet of Things (IoT) related technology, a lot of governments, national laboratories, and companies are to construct a smart city infrastructure these days. (Su, Li & Fu, 2011). Argonne National Laboratory is one of those institutions. Beckman et al. at Argonne National Laboratory have been developing an open platform named Sage, a smart software-defined sensor network, that could be used for various civil applications and AI-related researches. So during this summer, I worked on implementing a deep learning-based vehicle tracking model that could be deployed at the edge of Sage, and I’d like to share a high-level description about my model in this post.
 
-![tracking traffic](../imgs/vehicle-tracking-1.gif)
+![tracking traffic](/img/science/vehicle-tracking/vehicle-tracking-1.gif)
 
 > Figure 1. Tracking on random traffic video from YouTube
 
@@ -28,7 +28,7 @@ Let’s take an example of a pedestrian tracking shown in the below figure:
 
 ### Tracking-by-Detection
 
-![workflow of MOT algorithms](../imgs/vehicle-tracking-2.png)
+![workflow of MOT algorithms](/img/science/vehicle-tracking/vehicle-tracking-2.png)
 
 > Figure 2. Usual workflow of MOT Algorithms (Ciaparrone et al., 2020)
 
@@ -45,7 +45,7 @@ Feature extraction/motion prediction stage: a feature extractor extracts feature
 Affinity stage: feature vectors and motion predictions are used to compute a similarity/distance score between pairs of detections and/or tracklets; Mahalanobis/Cosine Distance
 Association stage: the similarity/distance measures are used to associate detections and tracklets belonging to the same target by assigning the same ID to detections that identify the same target; Hungarian Algorithm
 
-![model flow](../imgs/vehicle-tracking-3.png)
+![model flow](/img/science/vehicle-tracking/vehicle-tracking-3.png)
 > Figure 3. Model Flow
 
 As this post delivers high-level explanation about the model, if you want a more specified explanation or would like to play with the model please visit: https://github.com/heejae1213/object_tracking_deepsort (Have code but readmes are in progress)
@@ -53,7 +53,7 @@ As this post delivers high-level explanation about the model, if you want a more
 And below is the result of tracking on the video from Argonne Main Gate.
 
 
-![traffic tracking video argonne ](../imgs/vehicle-tracking-4.gif)
+![traffic tracking video argonne ](/img/science/vehicle-tracking/vehicle-tracking-4.gif)
 > Figure 4. Tracking on the video from Argonne Main Gate
 
 

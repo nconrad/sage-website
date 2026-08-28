@@ -6,7 +6,7 @@ My name is Luke Jacobs and I am a rising sophmore at the University of Illinois 
 
 ## A Visual Model of Water
 
-![sage node water seg](../imgs/water-seg-1.jpg)
+![sage node water seg](/img/science/water-segmentation/water-seg-1.jpg)
 > An image taken from a Sage node in Chicago
 
 An image taken from a Sage node in Chicago
@@ -17,7 +17,7 @@ As humans, we draw on numerous visual cues to identify water. In my research, I 
 ## Color
 For color identification I researched the use of Gaussian Mixture Models.3 This classifier was able to, for each pixel in a given image, output a probability value that that pixel was a water pixel. This initial classifier was a naive but efficient method for filtering out areas in an image that the computer was certain could not contain water. Take the following images, for example:
 
-![segmentation color](../imgs/water-seg-2.png)
+![segmentation color](/img/science/water-segmentation/water-seg-2.png)
 
 > Two example images and their segmentation outputs (original images taken from the Video Water Database by Mettes, et al. 2015)
 
@@ -26,13 +26,13 @@ The bottom row are input images to the color classifier. The top row images are 
 ## Texture
 Because simple color information is not a strong enough cue by itself to classify water spatially, I looked into a texture-based classifier using Local Binary Patterns (LBP’s). Local Binary Patterns are a way of representing an image that highlights its low-level grayscale gradients. In the case of water, this is quite helpful, since ripples and waves in water have distinct texture to them.
 
-![texture](../imgs/water-seg-3.png)
+![texture](/img/science/water-segmentation/water-seg-3.png)
 
 Intuitively, we can look at these images and say that the one on the left is probably an ocean wave and the one on the right might be a puddle. This is because water lies flat on the ground and exhibits ripples. One of the most helpful questions that I have had to ask myself throughout this research has been: How do I know this is water? If I can deduce why my brain thinks what I am looking at is water, then I can program that same line of thinking in a device.
 
 Each LBP image segmented by the texture classifier was divided into a number of 10 pixel by 10 pixel blocks, which then were separately classified by a Random Forest classifier. This yielded some good results, albeit with some noise:
 
-![texture](../imgs/water-seg-4.png)
+![texture](/img/science/water-segmentation/water-seg-4.png)
 
 > Original images and segmentation masks (original images taken from the Video Water Database by Mettes, et al. 2015)
 
@@ -41,14 +41,14 @@ The black-and-white boxy-looking images represent the predictions of the texture
 ## Motion
 Color and texture are helpful visual cues of water, but what really sets water apart from other scenery is the way it moves. The motion classifier, proposed by the paper “Water detection through spatio-temporal invariant descriptors,” is the most sophisticated method for water segmentation that I researched. It involves multiple preprocessing steps, which, although relatively computationally expensive, yield impressive segmentation results:
 
-![texture](../imgs/water-seg-5.png)
+![texture](/img/science/water-segmentation/water-seg-5.png)
 
 > Original images and segmentation masks (original images taken from the Video Water Database by Mettes, et al. 2015)
 The motion classifier can draw clear divisions between rivers and their boundaries, since it relies on the pixel-level motion of water to make segmentation predictions. This is helpful in supplementing the texture classifier, which struggles with noise, especially around the boundaries of water bodies.
 
 The motion classifier works by first dividing a set of ~60 grayscale frames into many video “patches.” Each video patch represents a 3 pixel by 3 pixel space in the video. After the video is broken up into patches, the spatial mean of the grayscale intensity of each patch is computed over the dimension of time. This yields a large number of signals which can then be fed into a discrete fourier transform, the output of which is finally fed into a Random Forest classifier.
 
-![texture](../imgs/water-seg-6.png)
+![texture](/img/science/water-segmentation/water-seg-6.png)
 
 The purpose of these preprocessing steps is to allow the Random Forest to perceive the specific motion of small regions of a video. It is able to automatically learn the unique visual frequency bands that characterize the ripples and waves in water, allowing it to identify water with only just a second or two of video footage.
 

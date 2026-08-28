@@ -9,11 +9,13 @@ module.exports = function scienceIndexPlugin() {
   return {
     name: 'science-index-plugin',
     async loadContent() {
-      const scienceDir = path.join(__dirname, 'science')
+      const scienceDir = __dirname
       const yearDirs = fs.readdirSync(scienceDir, {withFileTypes: true})
         .filter(entry => entry.isDirectory() && /^\d{4}$/.test(entry.name))
         .map(entry => entry.name)
         .sort((a, b) => b.localeCompare(a))
+
+      const oldestYear = yearDirs[yearDirs.length - 1]
 
       return yearDirs.map(year => {
         const dir = path.join(scienceDir, year)
@@ -34,15 +36,16 @@ module.exports = function scienceIndexPlugin() {
           .sort((a, b) => a.position - b.position)
           .map(({id, title, path: p}) => ({id, title, path: p}))
 
-        return {year, items}
+        const label = year === oldestYear ? `${year} and earlier` : year
+        return {year, label, items}
       })
     },
     async contentLoaded({content, actions}) {
-      const sidebarItems = content.map(({year, items}) => ({
+      const sidebarItems = content.map(({year, label, items}) => ({
         type: 'category',
-        label: year,
-        collapsible: false,
-        collapsed: false,
+        label,
+        collapsible: true,
+        collapsed: year !== '2026',
         items: items.map(({id, title, path}) => ({
           type: 'link',
           label: title,

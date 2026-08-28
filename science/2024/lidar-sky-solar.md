@@ -7,7 +7,7 @@ sidebar_position: 5
 
 LIDAR technology, with its ability to create detailed maps of atmospheric environments, can potentially solve the issue of blockers by providing precise information about the location and height of obstructions. It proposes many benefits that can’t be offered by a regular camera, especially the fact that it provides accurate data in all different types of weather conditions including fog, rain, and low light. This information can be used to adjust solar irradiance estimates and sky predictions, making them more accurate in any setting. Current models experience difficulties in the presense of blockers and unfamiliar sky conditions. We believe LiDAR can potentially solve this issue and allow us to deploy these nodes in urban areas.
 
-![sky image](../imgs/lidar_sky-solar1.png)
+![sky image](/img/science/lidar-sky-solar/lidar_sky-solar1.png)
 
 ## Motivation & Methods
 The goal or purpose behind this project was to develop a machine learning model using image and LiDAR data to accurately predict sky conditions and estimate solar irradiance even in the presence of ”blockers” and unfamiliar sky conditions found commonly in urban areas.
@@ -17,7 +17,7 @@ The steps we took towards completing this goal primarily were building models, g
 ## Problems & Results
 A major problem occurred when we were trying to gather solar wattage data. We naturally assumed wattage and irradiance to follow similar trends, but we found they shared little correlation with each other. Wattage peaks early in the morning and is generally higher than irradiance which is very abnormal.
 
-![irradiance and wattage trends](../imgs/lidar_sky-solar2.png)
+![irradiance and wattage trends](/img/science/lidar-sky-solar/lidar_sky-solar2.png)
 
 
 Due to this we looked more into the sky classification aspect of this research. We built a model that predicted whether the image was clear sky, 0, or other, 1. Some hyperparameters we chose included ResNet50 pretrained, Cross-Entropy Loss Function, and Adam Optimizer. The ResNet50 model performed well, receiving 98% test accuracy with recall and precision above 97% for both classes. This is where we encountered our next big problem. We were unable to represent the sky condition in numbers with the LiDAR data, so we chose to just find the correlation or relationship between irradiance data, images, and corresponding LiDAR data. This would help to prove the benefit of LiDAR in predicting sky conditions, and consequently solar data. Our original plan was to use LiDAR data to divide the ”other” class in the sky classification model into more descriptive classes like cloudy, thick overcast, hazy, etc.
@@ -26,21 +26,21 @@ Due to this we looked more into the sky classification aspect of this research. 
 
 | Hazy | Clear | Cloudy |
 |---------------------|----------------------|-----------------------|
-| ![Hazy sky-face image, 3/4/22](../imgs/lidar_sky-solar1a.jpg) | ![Clear sky-face image, 3/15/22](../imgs/lidar_sky-solar2a.jpg) | ![Cloudy sky-face image, 3/3/22](../imgs/lidar_sky-solar3a.jpg) |
+| ![Hazy sky-face image, 3/4/22](/img/science/lidar-sky-solar/lidar_sky-solar1a.jpg) | ![Clear sky-face image, 3/15/22](/img/science/lidar-sky-solar/lidar_sky-solar2a.jpg) | ![Cloudy sky-face image, 3/3/22](/img/science/lidar-sky-solar/lidar_sky-solar3a.jpg) |
 
 
 | 1hr LiDAR Hazy  | 1hr LiDAR Clear | 1hr LiDAR Cloudy |
 |---------------------------------------|---------------------------------------|--------------------------------------|
-| ![1hr LiDAR plot for hazy sky condition](../imgs/lidar_sky-solar1b.jpg) | ![1hr LiDAR plot for clear sky condition](../imgs/lidar_sky-solar2b.png) | ![1hr LiDAR plot for hazy sky condition](../imgs/lidar_sky-solar3b.png) |
+| ![1hr LiDAR plot for hazy sky condition](/img/science/lidar-sky-solar/lidar_sky-solar1b.jpg) | ![1hr LiDAR plot for clear sky condition](/img/science/lidar-sky-solar/lidar_sky-solar2b.png) | ![1hr LiDAR plot for hazy sky condition](/img/science/lidar-sky-solar/lidar_sky-solar3b.png) |
 
 | 1st 5min Average Signal Intensity Hazy | 1st 5min Average Signal Intensity Clear | 1st 5min Average Signal Intensity Cloudy |
 |-----------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
-| ![First 5 minute average signal intensity for hazy condition](../imgs/lidar_sky-solar1c.jpg) | ![First 5 minute average signal intensity for clear condition](../imgs/lidar_sky-solar2c.png) | ![First 5 minute average signal intensity for cloudy condition](../imgs/lidar_sky-solar3c.png) |
+| ![First 5 minute average signal intensity for hazy condition](/img/science/lidar-sky-solar/lidar_sky-solar1c.jpg) | ![First 5 minute average signal intensity for clear condition](/img/science/lidar-sky-solar/lidar_sky-solar2c.png) | ![First 5 minute average signal intensity for cloudy condition](/img/science/lidar-sky-solar/lidar_sky-solar3c.png) |
 
 
 | Irradiance Hazy | Irradiance Clear | Irradiance Cloudy |
 |----------------------|-----------------------|----------------------|
-| ![Irradiance for 3/4/22](../imgs/lidar_sky-solar1d.jpg) | ![Irradiance for 3/15/22](../imgs/lidar_sky-solar2d.png) | ![Irradiance for 3/3/22](../imgs/lidar_sky-solar3d.png) |
+| ![Irradiance for 3/4/22](/img/science/lidar-sky-solar/lidar_sky-solar1d.jpg) | ![Irradiance for 3/15/22](/img/science/lidar-sky-solar/lidar_sky-solar2d.png) | ![Irradiance for 3/3/22](/img/science/lidar-sky-solar/lidar_sky-solar3d.png) |
 
 
 Hazy

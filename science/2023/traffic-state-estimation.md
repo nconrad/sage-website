@@ -6,7 +6,7 @@ A real-time vehicle tracking application based on deep neural networks was utili
 We tried to estimate traffic states directly from the information that can be extracted from videos. The traffic state, that are traffic volume, space occupancy, travel speed, travel time and travel delays can be categorized into three types of information: traffic speed, flow and density (traffic_char1996). We calculated the three traffic state, flow, speed and density, which can be represented as traffic volume, travel speed or time and space occupancy respectively. The image processing algorithm required videos that were recorded with frame rate higher than 12 fps. The calculation result reporting frequency can be determined based on the demand of user. The default reporting frequency is every 30 second.
 
 
-![traffic static space occupancy box](../imgs/traffic-state-estimation-1.png)
+![traffic static space occupancy box](/img/science/traffic-state-estimation/traffic-state-estimation-1.png)
 
 ## Traffic Flow
 Traffic flow was defined as the number of vehicles that passed a certain line on a road per unit time. Traffic flow was estimated by counting how many vehicles passes the bottom line or top line of the orange box in the figure above for outgoing and incoming traffic respectively for the total length of the videos.  The number of vehicles that passed through the lines of the orange box were counted for the total length of the video, and that was averaged into the number of passed vehicles per second. The raw counting number also can be reported along with the averaged traffic flow. Because the vehicle tracking algorithm was able to identify each vehicles with identification number, we only counted each vehicle once while we processing the videos.

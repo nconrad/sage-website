@@ -39,7 +39,7 @@ The overall framework follows the steps in the DayDreamer workflow as shown in f
 The I-JEPA acts as the World Model, and RL agent is trained in the actor critic section.
 We will show a modified figure in the later state with details about our modifications and rationales.
 
-|![figure 1](../imgs//daydreamer_yl.png)|
+|![figure 1](/img/science/autonomous-camera-control/daydreamer_yl.png)|
 |:--:|
 |*Figure 1. workflow of DayDreamer <sup>[[2](#references)]</sup>*|
 
@@ -49,7 +49,7 @@ I-JEPA [1] is a self-supervised learning framework that learns to predict the pa
 Since the I-JEPA framework takes an input latent variable *z*, we use the command of camera as the input.
 The modification is shown in the figure below.
 
-|![figure 2](../imgs//world_model_yl.png)|
+|![figure 2](/img/science/autonomous-camera-control/world_model_yl.png)|
 |:--:|
 |*Figure 2. World Model Architecture*|
 
@@ -87,7 +87,7 @@ The agent will be connected to the context encoder of the world model selected, 
 
 Putting the world model and the RL agent together, the whole workflow is described in figure 3.
 
-|![figure 2](../imgs//system_workflow_yl.png)|
+|![figure 2](/img/science/autonomous-camera-control/system_workflow_yl.png)|
 |:--:|
 |*Figure 3. System Workflow. Different paths are highlighted with solid and dashed lines. The inference and image gathering process is in solid while the training path is in dashed line*|
 
@@ -121,23 +121,23 @@ The diagnostics are collected during the image gathering phase in lifelong train
 
 We have selected a demo case for the lifelong learning process. The world model is `wm_00_00` and the agent is `ag_00_02` using AXIS camera.From figure 4., world model has been restarted for 3 times (excluding the last red line where the training ends) and the spikes in the restart 3 shows that there are some information the model is trying to learn. We expect the oscillation in the final loss curve caused by the Exponential Mean Average (EMA) update on the target encoder, where the target encoder is trying to share information with via the EMA update.
 
-|![figure 4](../imgs//loss_yl.png)|
+|![figure 4](/img/science/autonomous-camera-control/loss_yl.png)|
 |:--:|
 |*Figure 4. Loss curve for wm_00_00. Red dashed line marks the restart*|
 
-|![figure 5](../imgs//tsne_yl.png)|
+|![figure 5](/img/science/autonomous-camera-control/tsne_yl.png)|
 |:--:|
 |*Figure 5. tSNE plot for the target encoder embeddings collected during image gathering phase. The clusters are distinct from each other with different rewards*|
 
-|![figure 6](../imgs//pointings_yl.png)|
+|![figure 6](/img/science/autonomous-camera-control/pointings_yl.png)|
 |:--:|
 |*Figure 6. absolution positions of the camera with reward and zoom values. The agent has different moving strategies for different parts of the surrounding. It has a larger steps on the left, while choosing much smaller steps on the right side of the pan range.*|
 
-|![figure 7](../imgs//3d_pointings_yl.png)|
+|![figure 7](/img/science/autonomous-camera-control/3d_pointings_yl.png)|
 |:--:|
 |*Figure 7. 3D presentation of camera absolution positions with rewards*|
 
-|![figure 8](../imgs/reward_comparison_yl.png)|
+|![figure 8](/img/science/autonomous-camera-control/reward_comparison_yl.png)|
 |:--:|
 |*Figure 8. Target, context and predictor embeddings with rewards. The top left panel shows the comparison of embeddings between context and target encoders. They overlap each other, which means target and context encoder shares similar information, as expected. The other five panels display the predictor embeddings given image pairs in a batch size of four. Steps are the number of actions between the pair of images and the reward assigned with the pair. The rewards are similar in range, but has a clear cluster and shape in the tSNE plot.*|
 

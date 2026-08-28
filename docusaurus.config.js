@@ -17,6 +17,7 @@ export default {
   organizationName: 'waggle-sensor',
   projectName: 'sage-website',
   trailingSlash: false,
+  staticDirectories: ['static', 'science/static'],
   future: {
     v4: {
       useCssCascadeLayers: true,
@@ -210,16 +211,18 @@ export default {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        /*
         gtag: {
           trackingID: 'G-HT12937E9K',
           anonymizeIP: true,
         },
+        */
       },
     ]
   ],
   plugins: [
     require.resolve('./ignore-html-loader'),
-    require.resolve('./science-index-plugin'),
+    require.resolve('./science/science-index-plugin'),
     async function tailwindConfigPlugin() {
       return {
         name: 'docusaurus-tailwindcss',

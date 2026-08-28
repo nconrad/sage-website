@@ -11,7 +11,7 @@ However, a major limitation is the rate at which data can be sent from the nodes
 
 ## Inferences at the edge
 
-![car with bounding box and confidence scores](../imgs/bandwidth-aware-1.png)
+![car with bounding box and confidence scores](/img/science/bandwidth-aware-learning/bandwidth-aware-1.png)
 
 > Example inference results of a car make/model detector at the edge.
 
@@ -21,12 +21,12 @@ Confidence can be viewed as a “negative measure” of uncertainty, and it made
 
 ## Making uncertainty more certain
 
-![augmented chars](../imgs/bandwidth-aware-2.png)
+![augmented chars](/img/science/bandwidth-aware-learning/bandwidth-aware-2.png)
 
 Examples of (augmented) Chars74K images (left) and KAIST Scene Text (right)
 My initial experiment involved training a simple object detection network using YOLOv31 to recognize 12 different alphanumeric characters using the Chars74K dataset2, and I ran inference on images with the same characters from the KAIST Scene Text dataset3. The initial results supported the idea that output confidence was positively correlated with the accuracy and precision of the model’s results, but the left set of confidence distributions below revealed that both accurate and inaccurate detections tended to have high confidences. This would make it difficult to automatically differentiate between data that are correctly and incorrectly labeled at the edge using only their confidences.
 
-![confidence distribution](../imgs/bandwidth-aware-3.png)
+![confidence distribution](/img/science/bandwidth-aware-learning/bandwidth-aware-3.png)
 > Confidence distribution of initial model inferences on KAIST data, before (left) and after (right) modifying confidence score calculation
 
 I then implemented an improved measure of uncertainty suggested by Geifman et. al4 in hopes of differentiating the confidence distributions for accurate and inaccurate labels. In this method, each input data point is evaluated by a series of linearly-spaced checkpoint models generated in the process of training the latest model, outputting many bounding boxes and confidences. These outputs are later combined by finding overlapping regions with Intersection over Union and averaging confidence scores for both object and class predictions. This new inferencing method yielded confidence distributions that were more left-skewed for accurate detections and right-skewed for misses (see right set of histograms), allowing us to choose either accurate or inaccurate images, depending on the sampling method’s goals.
@@ -45,7 +45,7 @@ Randomly taking data with equal probability
 In the first five methods, the confidence distribution of each inferred class type (e.g. a specific letter) is independently generated, then data from that class’s distribution are sampled. That way, the final sample would be roughly representative of the various classes given as the model’s inputs; a character that tends to have lower confidences compared to the overall median confidence would still be included in the sample if using the first sampling method. In the following two “binned” methods, we looked only at the overall confidence distribution, as it may not be necessary to retrain proportionately for some classes if their results were already accurate. Finally, the random sampling method was executed independent of confidence, and we ran two variants: one where class distribution was accounted for via stratification, and a truly random sample that uniformly sampled on all images.
 
 
-![confidence distribution 2](../imgs/bandwidth-aware-4.png)
+![confidence distribution 2](/img/science/bandwidth-aware-learning/bandwidth-aware-4.png)
 > Confidence distributions and metrics of samples created from various techniques on the first batch of KAIST data
 
 After creating a sample, the key “bandwidth limit” was enforced by randomly removing images for each class until the sample had an approximately equal number of images per class (oversampling on classes with more examples if necessary), with a total number of images under the limit.
@@ -54,7 +54,7 @@ After creating a sample, the key “bandwidth limit” was enforced by randomly 
 In a practical implementation of the sampling and retraining process on Sage, data would be continuously collected and sent to the Beehive periodically (e.g. twice a day) after running the inference and sampling functions at the edge. Once retraining is completed, the new and improved models would be sent back to Sage nodes and used for inference. To simulate this, 3,500+ images of the 12 different character classes from the KAIST dataset were split into batches of 500 images each, of which at most 300 were sampled and “sent back” for retraining. The retrained model would then be used to sample the next batch, until all batches were used.
 
 
-![mean average precision](../imgs/bandwidth-aware-5.png)
+![mean average precision](/img/science/bandwidth-aware-learning/bandwidth-aware-5.png)
 > Mean average precision of initial training and retrained models on the initial test set and combined test sets from sample data
 
 
@@ -66,7 +66,7 @@ As an extension of the next-batch testing method, I also created a larger, consi
 
 ## Retraining pipeline development
 
-![high-level diagram of sampling and retraining](../imgs/bandwidth-aware-6.png)
+![high-level diagram of sampling and retraining](/img/science/bandwidth-aware-learning/bandwidth-aware-6.png)
 > High level diagram of the sampling and retraining pipeline, with character detection experiment parameters italicized.
 
 The Python software pipeline for iterative retraining is designed to be scalable and easy for users to modify and deploy. An initial labeled set of data, separate from the data used for retraining, is first split into training, validation, and testing sets for creating a baseline neural network model. The training set is then augmented via a series of random affine transforms and shifts from the Albumentations library6, such that each class contains the same number of training images. These images are input into YOLOv3, a popular object detection framework, and training continues until the UP3 early stop criteria is reached, described by Prechelt7 as when validation loss increases three times in a row for a particular interval of training epochs. In custom experiments, users can also initialize the network with a set of pretrained weights, adjust hyperparameters, or modify the pipeline to use other neural network frameworks for use cases beyond object detection in images.
@@ -97,7 +97,7 @@ Normal PDF at avg. confidence	0.647	0.017
 Above 0.5 confidence	0.710	0.013
 Above median confidence	0.746	0.008
 
-![mean average precision](../imgs/bandwidth-aware-7.png)
+![mean average precision](/img/science/bandwidth-aware-learning/bandwidth-aware-7.png)
 
 >Average confidences of samples and improvements in retrained models’ mAP using next-batch testing
 Linear regression plot of sample confidence and average mAP increase
@@ -115,7 +115,7 @@ suv	598	0.334	0.621	0.350	0.730
 van	2247	0.116	0.301	0.806	0.771
 Overall	6814	0.322	0.743	0.410	0.666
 
-![validation](../imgs/bandwidth-aware-8.png)
+![validation](/img/science/bandwidth-aware-learning/bandwidth-aware-8.png)
 > Results of the initial model trained with the Stanford dataset on the VeRi test set. Validation AP is based on the training validation set.
 
 
@@ -140,25 +140,25 @@ Regression of the median average standard deviation of confidence scores in samp
 The data above suggest that threshold sampling methods (i.e. sampling above and below median confidence and 0.5 cutoffs), which intrinsically have a smaller spread of confidence scores, tend to result in smaller improvements in average precision. On the other hand, binned and random sampling methods have a larger range and the highest increases in precision. The linear regression between the two variables (R2 = 38.2%, p = 0.04) further supports this positive correlation.
 
 
-![mean average precision](../imgs/bandwidth-aware-9.png)
+![mean average precision](/img/science/bandwidth-aware-learning/bandwidth-aware-9.png)
 
 Furthermore, when focusing on non-threshold methods, there remains a fairly strong inverse relationship between sample confidence and increases in average precision. That is, sampling lower-confidence data would be most beneficial when a model is learning. Note that the sampling and retraining process for the car experiments was run multiple times for various bandwidth limits, between 15% and 75%, in increments of 15% (i.e. 450, 900, 1350, etc. images were sampled per batch). The above graphs only capture results at a particular sampling amount, though trends were evident across all bandwidths.
 
 After conducting this bandwidth sweep, I was able to evaluate if the effectiveness of each sampling method in improving model performance would increase or decrease as bandwidth changed. On average, threshold methods all still perform poorly compared to methods that lead to a larger range of confidence scores. This supports the idea that as models are learning and have not converged in performance, they should learn from a mix of ‘easy’ and ‘hard’ examples (i.e. through binned or random methods), regardless of what the bandwidth size is.
 
-![mean average precision](../imgs/bandwidth-aware-10.png)
+![mean average precision](/img/science/bandwidth-aware-learning/bandwidth-aware-10.png)
 > Table of median average precision increase across image batches for bandwidth limit and sampling method combinations. The highest increases for each bandwidth amount are bolded.
 
 I also wanted to evaluate how differing bandwidth sizes would affect the model’s learning rate after processing all image batches. Presumably, as the model trained with more images, it would be able to better generalize when testing and thus have the greatest increase in average precision. As a baseline, I retrained a model using all of the data from the VeRi image batches as samples (i.e. 3,000 images per batch), in order to see how significant improvements could be if we did not have the bandwidth limitation at the edge. This was plotted against the median AP increase for the non-stratified random sampling method as a fair standard of comparison.
 
 
-![mean average precision](../imgs/bandwidth-aware-11.png)
+![mean average precision](/img/science/bandwidth-aware-learning/bandwidth-aware-11.png)
 
 The above graph suggests that the effectiveness of extended bandwidth on increasing precision appears to converge as we increase the number of images sampled per batch. We have a sharp jump between 15% and 30% bandwidth, though we have diminishing returns as we approach 75%. However, sampling all images yields a peak AP of 0.871 (compared to the initial baseline of 0.322), and more data should be collected in the 75% to 100% range to better define the curve.
 
 Another real-world consideration aside from bandwidth is the retraining length of each image batch under the UP3 stopping criteria7, as cloud computational resources would be limited when Sage is handling many deployed models. I noticed that the average training time per batch tends to increase as bandwidth limit increases, regardless of sampling method. Certain sampling methods also were more likely to have batches that take a significantly longer time to train. Consequently, we define the efficiency of a particular sampling method at a particular bandwidth:
 
-![mean average precision](../imgs/bandwidth-aware-12.png)
+![mean average precision](/img/science/bandwidth-aware-learning/bandwidth-aware-12.png)
 
 These efficiencies, median APs, and median train durations were then averaged across either bandwidths or sampling methods and tabulated below:
 

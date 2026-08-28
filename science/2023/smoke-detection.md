@@ -1,16 +1,16 @@
 # Wildfire Classifier
 
-![](../imgs/smoke_wildfire.jpg)
+![](/img/science/smoke-detection/smoke_wildfire.jpg)
 
 Forest fires are a major problem, and have detrimental effects on the environment. Current solutions to detecting forest fires are not efficient enough, and other machine learning models have far too long computational speeds and poor accuracies. This study is a continuation of the work done by UCSD and their SmokeyNet deep learning architecture for smoke detection<sup>[[1](#references)]</sup>. We compared performance of deep learning models, in order to find the best model for this issue, and to find if a simple model can compare to a complex model. The models are: VGG16, UCSD SmokeyNet, Resnet18, Resnet34, and Resnet50.
 
 ## The Data
 
-![](../imgs/smoke_sky.jpg) ![](../imgs/smoke_ground.jpg)
+![](/img/science/smoke-detection/smoke_sky.jpg) ![](/img/science/smoke-detection/smoke_ground.jpg)
 
-![](../imgs/smoke_horizon.jpg) ![](../imgs/smoke_cloud.jpg)
+![](/img/science/smoke-detection/smoke_horizon.jpg) ![](/img/science/smoke-detection/smoke_cloud.jpg)
 
-![](../imgs/smoke1.jpg) ![](../imgs/smoke2.jpg)
+![](/img/science/smoke-detection/smoke1.jpg) ![](/img/science/smoke-detection/smoke2.jpg)
 
 We utilized wildfire images that have been collected from cameras deployed in San Diego area under HPWREN project[2] and cloud images that had been collected in Singapore under SWIMSEG project[3] because it was difficult to find days when there were clouds in the HPWREN images. We divided the images into 16 pathes because the original image size is much greater than what the models required as input size, and the wildfire smokes are detected in a small area on images. We created a dataset of 41,000 images, comprised of many different wildfire events from HPWREN. The images above are sampled ones of sky, ground, and horizon (first raw, from left to right), cloud and smoke (second raw, from left to right). We organized the images into three different format of classes: 1) split into 5 different classes -- sky, ground, horizon, cloud, and smoke, 2) split into 3 different classes -- smoke, cloud, and other, and 3) split into 2 different classes -- smoke and other.
 
@@ -20,11 +20,11 @@ Because the camera was set to watch a fixed scene, there was no recognizable dif
 
 We trained the models with the three different class groups and compared performance in terms of false positive rate (FPR), true positive rate (TPR), false negative rate (FNR), and true negative rate (TNR) as shown in the below image.
 
-![](../imgs/smoke_training.png)
+![](/img/science/smoke-detection/smoke_training.png)
 
 We found that the best results are when sky, ground, and horizon are grouped together as other, and smoke and cloud are left separate. In our case, the most important indicator is FNR because our goal is to reduce false wildfire alarm when this application is deployed at the area where they have mideum to high possibility of occuring wildfires and support local fire departments and foreset preservers for rapid response. As you can see in the table, it is very distinctive that the FNR is very low on VGG16 with 3 classes -- smoke, cloud, and other.
 
-![](../imgs/smoke_test_result.png)
+![](/img/science/smoke-detection/smoke_test_result.png)
 
 
 We wanted to ensure that the model wasn't completely overfitting to the HPWREN images but learnt something about smoke and cloud. So we also tested it on images from ond of ARM data collection sites to test the models with different background such as sky, ground, and horizon. The bar graph above is showing the classification result of each patches using original test images, which we also generated from HPWREN data, and ARM data. Must keep in mind that the burning event was not very obvious in the ARM testing data, but it won’t always be cut and clear, so it is a great test to see which model perform best with the least.

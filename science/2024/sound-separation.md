@@ -12,7 +12,7 @@ However, processing this data comes with its own challenges. Recordings made in 
 ## Mixture Invariant Training (MixIT)
 The motivation behind using MixIT over any other sound separation model is that fact that it is self-supervised. In contrast to traditional supervised methods, training for a MixIT model can be performed with entirely unlabeled data. This is appealing as it means we can train a model for focused use in a specific ecosystem without expending resources to manually create a labeled dataset beforehand.
 
-![MixIT model architecture](../imgs/sound-separation-1.png)
+![MixIT model architecture](/img/science/sound-separation/sound-separation-1.png)
 
 **Fig. 1.** *MixIT model architecture [1]*
 
@@ -20,7 +20,7 @@ The motivation behind using MixIT over any other sound separation model is that 
 ### Perch
 One of the MixIT models we tested is part of another project called Perch [2]. It was pretrained on birdsong recordings. Given that the input data from Morton Arboretum consists mostly of the same, the model performed quite well.
 
-![sample 1 spectrograms from Perch inference results](../imgs/sound-separation-2.png)
+![sample 1 spectrograms from Perch inference results](/img/science/sound-separation/sound-separation-2.png)
 
 **Fig. 2.** *Spectrograms processed by the 8-output Perch model. From the top: original field recording, road noise, bird 1, bird 2, a second channel of road noise, animal 1, wind noise, bird 3.*
 
@@ -31,7 +31,7 @@ In the sample shown above the Perch model separated out not only birds, but othe
 ### Data Preprocessing
 Although MixIT does not strictly require it, separation performace is improved significantly by taking some time to preprocess training data. One approach could be to strategically slice recordings for relative peaks in volume and/or frequency, as shown below. This would counteract the disproportionate amount of background noise present in field recordings and minimize wasted data.
 
-![preliminary results from peak-detection script](../imgs/sound-separation-3.png)
+![preliminary results from peak-detection script](/img/science/sound-separation/sound-separation-3.png)
 
 **Fig. 3** *Preliminary results from peak-detection script*
 

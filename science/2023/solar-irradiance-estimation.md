@@ -9,16 +9,16 @@ Solar energy is one of the cleanest and most renewable sources of energy in toda
 
 ## The Data
 
-![](../imgs/irr_sky1.jpg) ![](../imgs/irr_sky2.jpg)
+![](/img/science/solar-irradiance-estimation/irr_sky1.jpg) ![](/img/science/solar-irradiance-estimation/irr_sky2.jpg)
 
 A Waggle/Sage node were collecting sky images from Argonne Weather Observatory from 2022 summer. We used images captured on May through August 2022 because of the change of the trajectory of sun and maximum solar irradiance that is changing based on the trajectory. We assumed that the trajectory would not change significantly therefore the solar irradiance would be in relevantly similar range. We used solar irradiance measurement from a sensor deployed on Argonne Weather Observatory as a matching set with the images. The solar irradiance measurement is reported every 15 minute while the node took a picture once every hour. We matched image and measurement data based on their timestamp and this gave us a collection of about 4000 images to work with. Solar irradiance measurement ranges between 1060.7 and -9.74 during May through August 2022, and distribution of them are shown below:
 
-![](../imgs/irr_distribution.png)
+![](/img/science/solar-irradiance-estimation/irr_distribution.png)
 
 # Training and Model
 In our training, before the image was transformed to a tensor, the image was resized down to 224x224 to stay consistent with the pre-trained models. The image was also randomly flipped with a 50% chance and rotated randomly between 0-359 degrees so the model would be able to generalize better. For our model we compared the  pre-trained ResNet models (ResNet18, ResNet38, and ResNet50) and the VGG-16 model. However we replaced the last fully connected layer so that the model would give us a continuous value as an estimate instead of a range. We found that the ResNet 50 model performed the best with the lowest mean absolute error of 82. Graph on the left is showing the number of times that each margin of error appeared in our testing images. And right is showing the predicted irradiance of the test images against its actual irradiance value. The dots on the right plot are centering mostly around the line of $y=x$, meaning the model is predicting accurately on average. Also since there are points both above and below the line the model is not biased towards either overestimating or underestimating also causing it to predict well on average.
 
-![](../imgs/solar_irradiance1.png) ![](../imgs/solar_irradiance2.png)
+![](/img/science/solar-irradiance-estimation/solar_irradiance1.png) ![](/img/science/solar-irradiance-estimation/solar_irradiance2.png)
 
 
 ## Future Steps

@@ -5,7 +5,7 @@ Hello! My name is Neelanshi Varia and I am a student at Northwestern University 
 ## Why study snowflakes?
 The study of snowflakes isn’t just curiosity-driven research as one might think but also carries a lot of significance in terms of its usage and applications. Studying snowflake formation, snowflake structure and shape, crystallization and growth are some of the many areas the research has been carried out for years. Particularly, snowflake shape study has been of keen interests for its applications including storm prediction, more insight in precipitation microphysics, snowfall velocity prediction, water content prediction, snow-to-liquid ratio, etc. The snow habits help determine association with temperature and supersaturation in the clouds. It also helps to study prevention of breakdown accidents like greenhouse destruction, the collapse of a temporary building, traffic accidents, providing high-level information for various winter sports, etc.<sup>[[1](#references)]</sup>
 
-![snowflakes](../imgs/snowflake.jpg)
+![snowflakes](/img/science/snowflake/snowflake.jpg)
 
 
 > Image credits: Unsplash
@@ -22,7 +22,7 @@ For the current task, I am using a Convolutional Neural Network (CNN) which are 
 
 
 
-![snowflakes](../imgs/snowflake-cnn.png)
+![snowflakes](/img/science/snowflake/snowflake-cnn.png)
 
 > Image credits: Vibhor Nigam, Towards Data Science blog at Medium <sup>[[3](#references)]</sup>
 

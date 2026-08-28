@@ -1,16 +1,11 @@
 ---
 sidebar_position: 12
 sidebar_label: Speech Redaction at the Edge
-keywords:
-  - Sage Summer Camp
-  - Privacy
-  - Bioacoustics
-  - Edge Computing
+keywords: [Sage Summer Camp, Privacy, Bioacoustics, Edge Computing]
+tags: [Sage Summer Camp, Privacy, Bioacoustics, Edge Computing]
 ---
 
 # Speech Redaction at the Edge
-
-*Sage Grande: Summer of AI 2026*
 
 **Miguel Hernandez**, Northwestern University
 

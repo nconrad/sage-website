@@ -1,17 +1,11 @@
 ---
 sidebar_position: 9
-sidebar_label: Sage FlashPoint
-keywords:
-  - Sage Summer Camp
-  - Lightning
-  - Wildfire
-  - Bioacoustics
-  - Edge Computing
+sidebar_label: Lightning-Ignition Watch
+keywords: [Sage Summer Camp, Lightning, Wildfire, Bioacoustics, Edge Computing]
+tags: [Sage Summer Camp, Lightning, Wildfire, Bioacoustics, Edge Computing]
 ---
 
-# Sage FlashPoint — Multi-Node Lightning Localization & Wildfire Ignition Watch
-
-*Sage Grande: Summer of AI 2026*
+# Multi-Node Lightning Localization & Wildfire Ignition Watch
 
 **Sage Summer Camp 2026 · Samuel Watson (UH Mānoa / HCDP) · Sage user `scwatson` · camp blade H03E**
 
@@ -193,14 +187,14 @@ gain-normalized so a human can hear it (thunder 10–20 km out arrives at
 Fire discovered midday 2025-07-03, six kilometers from Sage node W06C. The
 node's microphone recorded straight through both suspect storms:
 
-![W06C heard the storms before the Kitten Fire](../imgs/summer-camp/sage-flashpoint/m1-timeline.png)
+![W06C heard the storms before the Kitten Fire](/img/science/sage-flashpoint/m1-timeline.png)
 
 The audio-only classifier flagged 17 thunder events — and dual-satellite
 cross-validation falsified **all 17**. This was the strongest of them
 (low-band transient ratio 31, the burst at ~23 s), yet neither GOES-18 nor
 GOES-19 saw a single flash within 50 km:
 
-![The strongest audio-only candidate — falsified by two satellites](../imgs/summer-camp/sage-flashpoint/kitten-thunder-1.png)
+![The strongest audio-only candidate — falsified by two satellites](/img/science/sage-flashpoint/kitten-thunder-1.png)
 
 🔊 Hear the false positive:
 
@@ -214,13 +208,13 @@ detections are *nominations*, never confirmations.
 Satellite data then found the real ignition storm — and anchored
 re-listening recovered the thunder that rain noise had buried:
 
-![GLM located the real ignition storm](../imgs/summer-camp/sage-flashpoint/kitten-glm-storm-map.png)
+![GLM located the real ignition storm](/img/science/sage-flashpoint/kitten-glm-storm-map.png)
 
 With each GLM flash as a time anchor, the detector re-listened in the
 predicted arrival windows and recovered 22 flash→bang arrivals. Two of the
 strongest, with their spectrograms and the actual recordings:
 
-![Confirmed arrival: flash 22:20:50 at 20.4 km, thunder 59.6 s later](../imgs/summer-camp/sage-flashpoint/flashmatch_222146.png)
+![Confirmed arrival: flash 22:20:50 at 20.4 km, thunder 59.6 s later](/img/science/sage-flashpoint/flashmatch_222146.png)
 
 🔊 <audio controls src="/audio/summer-camp/sage-flashpoint/w06c-20250702-222146Z-raw.flac"></audio> raw ·
 <audio controls src="/audio/summer-camp/sage-flashpoint/w06c-20250702-222146Z-listen.flac"></audio> normalized +47 dB
@@ -228,7 +222,7 @@ strongest, with their spectrograms and the actual recordings:
 — the GLM flash fired 20.4 km away at 22:20:50; sound needed 59.6 s to reach the node,
 landing +3.6 s into this clip, exactly where the detector found the onset.
 
-![Three flashes, three thunder arrivals in one 30-second clip](../imgs/summer-camp/sage-flashpoint/flashmatch_233336.png)
+![Three flashes, three thunder arrivals in one 30-second clip](/img/science/sage-flashpoint/flashmatch_233336.png)
 
 🔊 <audio controls src="/audio/summer-camp/sage-flashpoint/w06c-20250702-233336Z-raw.flac"></audio> raw ·
 <audio controls src="/audio/summer-camp/sage-flashpoint/w06c-20250702-233336Z-listen.flac"></audio> normalized +45 dB
@@ -240,7 +234,7 @@ And the frame that motivates the whole storm-mode controller — what the
 node's steerable camera was doing during the ignition storm (top two rows)
 and during the falsified events (bottom row): pointed at a cabin wall.
 
-![The PTZ watched a cabin wall through the ignition storm](../imgs/summer-camp/sage-flashpoint/forensics_sheet.jpg)
+![The PTZ watched a cabin wall through the ignition storm](/img/science/sage-flashpoint/forensics_sheet.jpg)
 
 Two distinct failures hide in this image, and honesty requires separating
 them. The first is *tasking*: nothing told the camera a storm was happening —
@@ -266,7 +260,7 @@ from the node. The gauge's only movement of the whole window — a 0.05 mm
 trace — arrives exactly at the fire line: the passing storm itself. Textbook
 dry lightning:
 
-![Selma bust — heat spike, bone-dry gauge, 14 fires in one day](../imgs/summer-camp/sage-flashpoint/selma-dry-bust.png)
+![Selma bust — heat spike, bone-dry gauge, 14 fires in one day](/img/science/sage-flashpoint/selma-dry-bust.png)
 
 The node also captured hourly imagery through the bust, but its files sit
 behind a per-node ACL not granted to this project (403) — which is why W067

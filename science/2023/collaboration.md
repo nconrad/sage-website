@@ -1,5 +1,5 @@
 ---
-image: ../thumbnails/collaboration-icon.jpg
+image: /thumbnails/collaboration-icon.jpg
 ---
 
 # Unleashing the Power of Collaboration
@@ -9,14 +9,14 @@ Clouds have long fascinated humans because of their complex and diverse nature. 
 Inspired by compelling results after applying a self-supervised machine learning model (called DINO) to bird sound analysis, our team explored the possibility of utilizing similar techniques to study cloud images (referring to it as ClouDINO). Encouraging early results prompted us to seek further application of the model by leveraging data from the Atmospheric Radiation Measurement (ARM) User Facility at the Department of Energy's Southern Great Plains (SGP) atmospheric observatory and Argonne Testbed for Multiscale Observational Science (ATMOS) at the U.S. Department of Energy’s Argonne National Laboratory.
 
 
-![Zones](../imgs/Zones.png)
+![Zones](/img/science/collaboration/Zones.png)
 
 **Fig:1** _The feature vectors trained with DINO in PCS space._
 
 
 We used a self-supervised learning model capable of autonomously extracting prominent features from ground-based sky camera images. Using a joint embedding architecture with Vision Transformers, our model learned to autonomously segment cloudy images and classify them based on their properties such as coverage, diurnal variation, and cloud base height. Notably, the self-supervised model even showed potential for semantic segmentation without the need for labeled data which we would like to explore further. The results were comparable to the other studies of our team lead by Bobby Jackson, an atmospheric scientist and instrument specialist at Argonne, who primarily utilized Doppler Lidar data. Furthermore, Seongha Park's prior work in solar energy prediction, leveraging her expertise in computer science and information technology, significantly complemented our findings and greatly boosted our validation efforts with new a dataset. This made our results more robust due to intercomparison from the different perspectives.
 
-![Clusters_Labelled](../imgs/Clusters_Labelled.png)
+![Clusters_Labelled](/img/science/collaboration/Clusters_Labelled.png)
 
 **Fig:2** _K-means clusters of the above feature vectors._
 
@@ -24,7 +24,7 @@ We used a self-supervised learning model capable of autonomously extracting prom
 One particular impact of our work will be on the incorporation of edge computing via SAGE nodes, enabling self-supervised learning to occur at the edge itself. This real-time data processing will remove the need of transmitting large data to the cloud, and it can enable sensor configuration in response to changing conditions and opening new avenues for application, putting privacy at the peak priority. We are testing our ideas at the edge thanks to the constant support provided by the Waggle cyber infrastructure team.
 
 
-![instruments2](../imgs/instruments2.jpg)
+![instruments2](/img/science/collaboration/instruments2.jpg)
 
 **Fig:3** _Sage node at the ARM User Facility at Southern Great Plains (SGP) atmospheric observatory._
 

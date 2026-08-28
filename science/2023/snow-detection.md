@@ -5,7 +5,7 @@ Ice and snowfall are incredibly important parts of a river ecosystem. The Bad Ri
 ## The Data
 Two Waggle/Sage nodes were collecting both images and other data from the Bad River in 2022-2023 winter. The one node (W014) was collecting data in 2022 up until December when it went offline, in January a second node (W083) started collecting images pointing at essentially the same spot. This gave us a collection of 3500 images to work with. About half of them had snow of some kind and half did not so there weren't any major class imbalance problems. One of the big decisions we had to make was when to count an image as having snow. Did a few patches count? Did a light dusting of snow count? In the end, we elected to count _any_ snow on the ground to simplify the problem. The two images below are from W014 and W083 respectively.
 
-![](../imgs/snow_W014.jpg) ![](../imgs/snow_W083.jpg)
+![](/img/science/snow-detection/snow_W014.jpg) ![](/img/science/snow-detection/snow_W083.jpg)
 
 The nodes took a picture once every hour, so some images were at night and too dark to see. Images where we couldn't discern whether there was snow or not (snow fell at night at an unclear time) were discarded from the dataset. Darker images were still included if we could confirm that they contained snow.
 
@@ -17,14 +17,14 @@ Our goal was to create a machine learning model that could detect whether there 
 
 Transfer learning works by taking an image classification model that someone else has already taken the time to train reusing it for a new purpose. We utilized ResNet50<sup>[[1](#references)]</sup>, a popular convolutional neural network model that pioneered a technique called residual connections. Residual connections allow neural networks to optimize quickly while still being deep enough to capture complex relationships. ResNet50 is a very deep network with fifty layers (hence the name) and would take a lot of time and computing power to train even with the residual connections, but some free pre-trained models are essentially plug-and-play with only small modifications. A visualization of ResNet50's architecture is seen below<sup>[[2](#references)]</sup>.
 
-![ResNet50 Model (without additional layers)](../imgs/snow_ResNet50.png)
+![ResNet50 Model (without additional layers)](/img/science/snow-detection/snow_ResNet50.png)
 
 The theory behind transfer learning is that ResNet50 has already learned to encode certain aspects of an image that are generalizable, so all it needs is a few changes to use those lower-level features to create a new prediction. To turn the model into a snow detector, we tacked on a couple of extra linear layers at the end to generate a prediction score for whether there is snow or not. This vastly sped up training time compared to creating a whole new model.
 
 ## Results
 The classifier was able to detect snow incredibly accurately from images collected from W014 and W083 (left confusion matrix). However, we wanted to ensure that the model wasn't completely overfitting to the images from these nodes and was learning something about snow. We also tested it on images from a node in Montana (W084). It didn't perform quite as well but still performed accurately enough to indicate that it wasn't overfitting horrendously (right confusion matrix). That being said, currently, the plugin is released to be used at the Bad River W083 node as it's not fit to be a general snow classifier quite yet.
 
-![](../imgs/snow_badriver_confusion_matrix.png)
+![](/img/science/snow-detection/snow_badriver_confusion_matrix.png)
 
 ## Future Steps
 

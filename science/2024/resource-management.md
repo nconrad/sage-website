@@ -7,7 +7,7 @@ sidebar_position: 2
 ## Abstract
 Waggle is a state-of-the-art open-source platform for developing and deploying novel artificial intelligence algorithms and new sensors into distributed sensor networks. This platform has allowed for researchers to make scientific advancements in diverse environments. Despite its success and technological sophistication, Waggle has its shortcomings. For example, the current Waggle infrastructure has no notion of resource management. Instead, it attempts to use resources conservatively–directly impacting the performance of individual nodes.
 
-![An image of several wild Waggle nodes](../imgs/resource-management-waggle.png)
+![An image of several wild Waggle nodes](/img/science/resource-management/resource-management-waggle.png)
 > Wild Waggle Nodes
 
 To better understand resource usage within the Waggle infrastructure, we are proposing a standard set of key metrics for resource utilization, designing a standardized system that mimics the Waggle nodes, developing a data collection pipeline, establishing an edge-specific resource utilization dataset, and building tools to analyze this dataset. In alignment with Waggle’s mission, we hope to open the door for other computer scientists to make contributions to resource management at the edge. Ultimately, our work will allow for more efficient computing at the edge through the Waggle infrastructure.
@@ -15,7 +15,7 @@ To better understand resource usage within the Waggle infrastructure, we are pro
 ## Background and Motivation
 Most estimates place the number of edge computing devices in the tens of billions, and this is only expected to grow. With single purpose edge devices, resource utilization is understood at the time of design. However, in general purpose systems such as Waggle, resource utilization is an open problem. A better understanding of resource utilization can allow for smarter job scheduling, smarter interactions with cloud and peer devices, and create more performant systems. While these contributions are small at the scale of a single device, they add up at the scale of the edge.
 
-![An image of an NVIDIA Jetson Xavier NX](../imgs/resource-management-nx.jpeg)
+![An image of an NVIDIA Jetson Xavier NX](/img/science/resource-management/resource-management-nx.jpeg)
 > An NVIDIA Jetson NX, the compute inside a Waggle node
 
 The necessity of resource management can be seen in the use of AI applications via Waggle. Summer student Ryan Rearden ran two recent multi-modal models that captioned a video clip. These models used nearly one hundred percent of the CPU for nearly ten hours each. With the growth of modern models, the necessity of real-time resource management is a must for general purpose AI edge systems like Waggle.
@@ -32,7 +32,7 @@ To break down the ansible script into a flexible manner as we have mentioned, we
 
 The final part of our framework is a simple and flexible data pipeline that allows users to pull data from our metrics server. Since our metrics server is in the prometheus format, it is possible to use any prometheus client as a data pipeline or write your own.
 
-![An image describing the metrics gathering framework](../imgs/resource-management-framework.jpeg)
+![An image describing the metrics gathering framework](/img/science/resource-management/resource-management-framework.jpeg)
 > The Framework
 
 ## Gathering Data
@@ -42,13 +42,13 @@ In order to simulate a program, we first need to think about what a program is i
 
 To simulate a program, we use existing stress tools to vary the load on the system. The first tool is stressng, a tool for stressing cpu. The second tool is gpu-stress-test, a Waggle tool for stressing gpu. By combining them together with a controller that manages resources, we create a new program that enacts variable stress on the system. We chose these two programs because we identified CPU and GPU as key metrics for power utilization. In the future, adding more avenues of stress is as simple as incorporating them into the resource controller.
 
-![An image showing the relationship between system level cpu usage and power](../imgs/resource-management-data-1.png)
-![An image showing the relationship between container level cpu usage and power](../imgs/resource-management-data-2.png)
+![An image showing the relationship between system level cpu usage and power](/img/science/resource-management/resource-management-data-1.png)
+![An image showing the relationship between container level cpu usage and power](/img/science/resource-management/resource-management-data-2.png)
 > Two plots gathered from simulating a program
 
 Now the other part of our dataset is built of SAGE applications themselves. Since we have designed our system with a black box program in mind, it is fairly straightforward to gather data from SAGE applications. All that is required are a few pieces of Waggle infrastructure and we can run SAGE applications on our test bed. Once we have these, we are able to run SAGE applications and profile their resource utilization based on the key metrics we identified earlier.
 
-![An image showing time series resource data gathered from the framework](../imgs/resource-management-plugin-traffic.png)
+![An image showing time series resource data gathered from the framework](/img/science/resource-management/resource-management-plugin-traffic.png)
 > Data gathered from monitoring a SAGE application
 
 Finally, the last way that we want to add variation in our dataset is through gathering data on multiple devices. The Waggle stack contains several different computation devices–including Raspberry Pis, NVIDIA Jetson NXs, and NVIDIA Jetson Nanos. To account for all of these while we gather data, it is important to apply our data gathering techniques across a variety of devices. Furthermore, the Waggle infrastructure is designed to be distributed. By gathering data from multiple devices, we can simulate a distributed network. Ultimately, making our testbed and data gathering sources simulate the Waggle ecosystem will give us the best dataset possible.

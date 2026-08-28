@@ -1,16 +1,11 @@
 ---
 sidebar_position: 0
 sidebar_label: Sage-NDP-SciDx MCP
-keywords:
-  - Sage Summer Camp
-  - MCP
-  - National Data Platform
-  - Live Streaming
+keywords: [Sage Summer Camp, MCP, National Data Platform, Live Streaming]
+tags: [Sage Summer Camp, MCP, National Data Platform, Live Streaming]
 ---
 
-# Sage-NDP-SciDx MCP: Project Overview
-
-*Sage Grande: Summer of AI 2026*
+# Sage-NDP-SciDx MCP
 
 ## Sage MCP: Existing Capabilities
 

@@ -1,9 +1,6 @@
 ---
 sidebar_position: 0
-keywords:
-  - Dynamic Sensing
-  - Autonomous Sensor Networks
-  - Modelling
+keywords: [Dynamic Sensing, Autonomous Sensor Networks, Modelling]
 sidebar_label: Application-Agnostic Dynamic Data Collection
 ---
 
@@ -19,7 +16,7 @@ email: henryabrahamson2022@u.northwestern.edu
 ### Motivation
 
 <div className="md:float-right md:ml-6 md:max-w-xs">
-  ![deer picture](../imgs/DDCdeer.jpg)
+  ![deer picture](/img/science/dynamic-data-collection/DDCdeer.jpg)
   <small className="flex align-center justify-end mt-[-25px] text-slate-500">
     ([Image Source](https://heritageconservancy.org/wp-content/uploads/2023/11/deer-8175966_1280.jpg))
   </small>
@@ -44,7 +41,7 @@ In order to explore our framework, we also create a **simulation**. This simulat
 ## Modelling
 Our framework consists of two components: the **environment**, and the **strategy**.
 ### Environment Model
-![environmental state diagram](../imgs/DDCstatepic.png)
+![environmental state diagram](/img/science/dynamic-data-collection/DDCstatepic.png)
 
 Image Source [1](https://www.needpix.com/photo/download/1741227/forest-fire-wildfire-blaze-firefighters-smoke-trees-heat-burning-hot), [2](https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/7/78/Chacachacare_dry_forest_3.JPG)
 
@@ -77,16 +74,16 @@ As a proof of concept, we ran the simulation under two conditions.
 ### Responsive Strategy + Markovian Environment
 Firstly, without any application in mind for motivation, we used the Responsive strategy that can switch between high and low quality measurements, with a static sample rate of 1 sample per second and a memory cap (*m*) of 1 vs. 4 for comparison, alongside a Markovian environment with parameters as in the figure below. We ran the simulation for 500  seconds in simulation time.
 
-![simenvironment1](../imgs/DDCsim1state.png)
+![simenvironment1](/img/science/dynamic-data-collection/DDCsim1state.png)
 
 We see how our strategy responds to the environment over time in the figure below. The gray line indicates the measurement quality produced by the strategy, while the black line indicates the relevancy of the sample produced by the environment. Ideally, the gray line should follow the black line closely. We see that both the *m* = 1 and 4 strategies track the environment reasonably well, with the *m* = 1 measurement quality being generally more volatile since it tries to track the sample relevancy exactly. On the other hand, the *m* = 4 strategy is smoother, since it waits for 4 time steps before switching from active to passive sensing. As such, the *m* = 1 strategy has fewer high quality measurements wasted on irrelevant data points, but the *m* = 4 strategy has more high quality measurements of relevant data, since it has fewer misses from switching to passive sensing too early.
 
-![sim1results](../imgs/DDCsim1results.png)
+![sim1results](/img/science/dynamic-data-collection/DDCsim1results.png)
 
 Assigning a cost of 1 Joule to passive sensing and 3 Joules to active sensing, we see that the *m* = 1 strategy costs 620J and the *m* = 4 strategy costs 678J, compared to a baseline of 500J for an all-low-quality strategy and 1500J for an all-high-quality strategy. Thus for *m* = 4, we incur a penalty of 35% extra energy to capture most of the relevant data with high quality measurements, compared to the 200% penalty from the all-high-quality strategy.
 
 ### Waiting Time Strategy + Preset Environment with More Realistic Numbers
-![sim2pic](../imgs/DDCsim2pic.png)
+![sim2pic](/img/science/dynamic-data-collection/DDCsim2pic.png)
 
 Next, we devise a simple but real application to have the simulation generate realistic numbers, and to see if we still have tangible gains. In this case, we assume that a SAGE node is posted by a road, and is taking a picture once per minute and analyzing is using [YOLO](https://docs.ultralytics.com/tasks/detect/) to detect cars as they drive by. Once YOLO detects a car, the next picture taken is analyzed using the more computationally expensive [Moondream](https://moondream.ai/) for a more detailed description of the scene. Based on previous SAGE usage of Moondream, we assume that it takes 10 minutes for it to run to completion (counting initialization time). While Moondream is running, YOLO still runs once per minute in the background. We also assume based on past runs of these jobs that both jobs take up 1 CPU and GPU per minute.
 
@@ -98,7 +95,7 @@ For the environment, we collected video from one of the SAGE nodes near argonne 
 
 The results are shown in the table below. Using our dynamic strategy, we were able to get 27 runs of Moondream on relevant data, compared to 15 runs by naively running Moondream once every 10 minutes. This jump occurs because many of the events of interest lasted fewer than 10 minutes -- as such, using YOLO as a trigger allows the SAGE node to notice these short events and respond appropriately.
 
-![sim2table](../imgs/DDCsim2results.png)
+![sim2table](/img/science/dynamic-data-collection/DDCsim2results.png)
 
 ## Future Directions
 Potential directions for future work include the implementation of these strategies on a SAGE node directly, developing new environment and strategy models (of particular interest would be a trinary state strategy with states representing *passive*, *ready*, and *active*). These two thrusts would both move towards making these dynamic data collection closer to being applied in reality and hopefully more easily accessible to SAGE users. Also of interest would be obtaining theoretical guarantees of performance given a Markovian environment with bounded parameters, providing a mathematical justification for these strategies, and allowing for the development of a tool that might be able to calculate worst-case performances.

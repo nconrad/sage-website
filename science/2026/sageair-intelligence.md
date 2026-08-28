@@ -1,11 +1,8 @@
 ---
 sidebar_position: 2
-sidebar_label: SageAir Intelligence
-keywords:
-  - Sage Summer Camp
-  - Air Quality
-  - Computer Vision
-  - Multimodal
+sidebar_label: Air Quality Imaging
+keywords: [Sage Summer Camp, Air Quality, Computer Vision, Multimodal]
+tags: [Sage Summer Camp, Air Quality, Computer Vision, Multimodal]
 ---
 
 # SageAir Intelligence
@@ -17,7 +14,9 @@ keywords:
 SageAir Intelligence explores whether ground-level camera imagery, combined with nearby air-quality and meteorological observations, can provide a qualitative, confidence-aware indication of unhealthy air. The project is designed as a complementary screening capability for places where reference-grade monitoring is sparse—not as a replacement for calibrated regulatory instruments.
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/monet-houses-of-parliament.jpg" alt="Claude Monet's Houses of Parliament, London" width="720" />
+
+![Claude Monet's Houses of Parliament, London](/img/science/sageair-intelligence/monet-houses-of-parliament.jpg)
+
 </p>
 
 *Figure 1. Claude Monet, **Houses of Parliament, London** (1900–1901), Art Institute of Chicago. The painting provides a visual prologue to the long history of atmosphere altering colour, contrast, and visibility.*
@@ -29,13 +28,17 @@ Air pollution is often invisible as a chemical exposure, but its effects on the 
 More recently, Canadian wildfire smoke transformed New York City in June 2023, covering the skyline in an orange-brown haze. In July 2026, smoke again reduced visibility and produced unhealthy-to-hazardous air-quality conditions across Chicago. These scenes connect different periods and places through one recurring observation: **changes in the atmosphere leave visual evidence**.
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/new-york-wildfire-smoke-2023.png" alt="New York City under Canadian wildfire smoke in June 2023" width="760" />
+
+![New York City under Canadian wildfire smoke in June 2023](/img/science/sageair-intelligence/new-york-wildfire-smoke-2023.png)
+
 </p>
 
 *Figure 2. Canadian wildfire smoke over New York City on 7 June 2023, sharply reducing visibility and increasing surface-level particulate pollution. Source: NBC New York.*
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/chicago-wildfire-smoke-2026.png" alt="Chicago skyline obscured by wildfire smoke in July 2026" width="760" />
+
+![Chicago skyline obscured by wildfire smoke in July 2026](/img/science/sageair-intelligence/chicago-wildfire-smoke-2026.png)
+
 </p>
 
 *Figure 3. Canadian wildfire smoke obscures the Chicago skyline during the July 2026 smoke episode. Source: CNN.*
@@ -78,7 +81,7 @@ These labels are model-development categories. They should not be interpreted as
 
 | Comparatively clear conditions | Smoke-affected conditions |
 |---|---|
-| <img src="../imgs/summer-camp/sageair-intelligence/chicago-clear-conditions-noaa.jpg" alt="Chicago under comparatively clear atmospheric conditions" width="460" /> | <img src="../imgs/summer-camp/sageair-intelligence/chicago-smoke-conditions-noaa.jpg" alt="Chicago under smoke-affected atmospheric conditions" width="460" /> |
+| ![Chicago under comparatively clear atmospheric conditions](/img/science/sageair-intelligence/chicago-clear-conditions-noaa.jpg) | ![Chicago under smoke-affected atmospheric conditions](/img/science/sageair-intelligence/chicago-smoke-conditions-noaa.jpg) |
 
 *Figure 4. Example Chicago camera views showing the visual contrast between comparatively clear and smoke-affected conditions during the study window.*
 
@@ -89,7 +92,9 @@ The period captures visual changes in visibility, contrast, sky appearance, haze
 ## Camera image data
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/nirem-sage-node-map.png" alt="Map of NIREM Sage nodes used in the study" width="700" />
+
+![Map of NIREM Sage nodes used in the study](/img/science/sageair-intelligence/nirem-sage-node-map.png)
+
 </p>
 
 *Figure 5. Geographic distribution of the NIREM Sage nodes used for image collection.*
@@ -135,7 +140,9 @@ This is an initial development and feasibility dataset, not a definitive regulat
 # 2. Data Processing and Dataset Construction
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/data-processing-pipeline.png" alt="SageAir data-processing workflow" width="520" />
+
+![SageAir data-processing workflow](/img/science/sageair-intelligence/data-processing-pipeline.png)
+
 </p>
 
 *Figure 6. Data-processing workflow from raw Sage imagery and PurpleAir observations to the final balanced YOLO dataset.*
@@ -193,7 +200,9 @@ Future experiments should include:
 # 3. Operational Pipeline
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/sageair-operational-pipeline.png" alt="SageAir operational pipeline from camera frame to published signal" width="900" />
+
+![SageAir operational pipeline from camera frame to published signal](/img/science/sageair-intelligence/sageair-operational-pipeline.png)
+
 </p>
 
 *Figure 7. Proposed SageAir operational pipeline: capture, quality control, inference, confidence-aware classification, and alert publication.*
@@ -237,13 +246,17 @@ The selected model was evaluated on the balanced test set of **84 images**. It c
 | Overall accuracy | **0.94** |
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/yolo-sample-predictions.png" alt="Example YOLO image-classification predictions" width="900" />
+
+![Example YOLO image-classification predictions](/img/science/sageair-intelligence/yolo-sample-predictions.png)
+
 </p>
 
 *Figure 8. Example image-only predictions, with misclassified cases displayed first.*
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/yolo-confusion-matrix.png" alt="YOLO image-only confusion matrix" width="620" />
+
+![YOLO image-only confusion matrix](/img/science/sageair-intelligence/yolo-confusion-matrix.png)
+
 </p>
 
 *Figure 9. Image-only confusion matrix: 40 bad images and 39 good images were classified correctly; two bad images were classified as good, and three good images were classified as bad.*
@@ -278,7 +291,9 @@ A ResNet50 image encoder and a small multilayer perceptron for meteorological va
 Training-time image augmentation included random crop, horizontal flip, rotation, colour jitter, Gaussian blur, synthetic haze overlay, and random erasing. Meteorological variables were standardised using a scaler fitted only on the training data.
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/multimodal-training-pipeline.png" alt="Multimodal SageAir training pipeline" width="950" />
+
+![Multimodal SageAir training pipeline](/img/science/sageair-intelligence/multimodal-training-pipeline.png)
+
 </p>
 
 *Figure 10. Multimodal training pipeline combining camera imagery and weather observations. The figure was produced as a conceptual aid and should be aligned with the final implementation before publication.*
@@ -307,13 +322,17 @@ The multimodal model correctly classified **76 of 84 images** in the node-held-o
 | AUC | **0.955** |
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/multimodal-sample-predictions.png" alt="Example multimodal model predictions" width="900" />
+
+![Example multimodal model predictions](/img/science/sageair-intelligence/multimodal-sample-predictions.png)
+
 </p>
 
 *Figure 11. Example multimodal predictions, with mistakes displayed first.*
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/multimodal-confusion-matrix.png" alt="Multimodal model confusion matrix" width="620" />
+
+![Multimodal model confusion matrix](/img/science/sageair-intelligence/multimodal-confusion-matrix.png)
+
 </p>
 
 *Figure 12. Multimodal confusion matrix: 39 bad and 37 good images were classified correctly; three bad images were classified as good, and five good images were classified as bad.*
@@ -382,7 +401,9 @@ The next engineering milestone is a versioned, auditable Sage Edge application.
 ## Multi-camera dashboard and historical visualisation
 
 <p align="center">
-  <img src="../imgs/summer-camp/sageair-intelligence/sageair-dashboard-mockup.png" alt="SageAir dashboard concept" width="720" />
+
+![SageAir dashboard concept](/img/science/sageair-intelligence/sageair-dashboard-mockup.png)
+
 </p>
 
 *Figure 13. Dashboard concept showing the latest prediction, camera view, map-based node selection, meteorological context, historical predictions, and vicinity alerts.*

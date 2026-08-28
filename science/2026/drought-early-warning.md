@@ -1,16 +1,11 @@
 ---
 sidebar_position: 5
 sidebar_label: Drought Early Warning
-keywords:
-  - Sage Summer Camp
-  - Drought
-  - Multimodal
-  - NEON
+keywords: [Sage Summer Camp, Drought, Multimodal, NEON]
+tags: [Sage Summer Camp, Drought, Multimodal, NEON]
 ---
 
 # Multimodal Drought Early Warning at the Edge
-
-*Sage Grande: Summer of AI 2026*
 
 **Di Fan,  Levi	Johnson, John	Blackwell, Atefeh Hosseini**
 
@@ -28,8 +23,8 @@ Using these observations in near real time is not straightforward. Environmental
 This project investigates multimodal drought early warning using the SAGE edge-computing ecosystem. We use the National Ecological Observatory Network (NEON) Caddo–Lyndon B. Johnson National Grasslands site (CLBJ) in north-central Texas as an initial pilot. CLBJ provides a useful combination of atmospheric, soil, and PhenoCam observations in a Southern Plains environment.
 
 Texas is used here as a starting example rather than the final geographic scope. Future work will extend the study to sites in Colorado, Wyoming, and other climate regions to examine how well the approach transfers across different ecosystems and sensor configurations.
-![Edge demonstration](../imgs/summer-camp/drought-early-warning/figure1_motivation.png)
-> **Figure 1 Motivation.** 
+![Edge demonstration](/img/science/drought-early-warning/figure1_motivation.png)
+> **Figure 1 Motivation.**
 ### Our Work
 
 We developed a research prototype that combines environmental sensor histories with landscape imagery to estimate current drought conditions and provide short-term outlooks. The system is designed around a realistic operational constraint: all expected inputs may not be available at the same moment.
@@ -73,8 +68,8 @@ The demonstration provides three complementary views.
 ### Live Forecast
 
 The Live Forecast interface accepts currently available sensor measurements, a recent image, or either modality independently. This allows the system to demonstrate prediction under incomplete observations rather than requiring every input to arrive at once.
-![Edge demonstration](../imgs/summer-camp/drought-early-warning/liveforecast.png)
-> **Figure 2 Live Forecast.** 
+![Edge demonstration](/img/science/drought-early-warning/liveforecast.png)
+> **Figure 2 Live Forecast.**
 ### Historical Replay
 
 Historical Replay reconstructs a selected point in the archive and shows how the output changes as additional observations become available. It is intended to represent asynchronous environmental data collection rather than claim that the archive contains original real-time ingestion timestamps.
@@ -84,8 +79,8 @@ Historical Replay reconstructs a selected point in the archive and shows how the
 Model Evidence separates observation-based indicators from learned predictions and highlights cases in which the sources of evidence agree, disagree, or are insufficient. This distinction is important for avoiding an overly confident interpretation of a research prototype.
 
 The numerical inference pipeline and dashboard currently run in a GPU-enabled container on an NVIDIA Thor development node. A locally hosted language model provides the explanatory interface. The scientific forecast remains available even when the language model is slow or unavailable.
-![Edge demonstration](../imgs/summer-camp/drought-early-warning/figure3_edge_demo.png)
-> **Figure 3 Edge demonstration.** 
+![Edge demonstration](/img/science/drought-early-warning/figure3_edge_demo.png)
+> **Figure 3 Edge demonstration.**
 
 ## Preliminary Findings
 

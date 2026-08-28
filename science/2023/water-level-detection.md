@@ -11,20 +11,20 @@ Detecting real-time water level in rivers or creeks located in urban areas is cr
 
 ## About the data
 
-![sample image](../imgs/water-level-1.jpg)
+![sample image](/img/science/water-level-detection/water-level-1.jpg)
 > Figure 1- Sample image taken using the AoT node at Northern Illinois University
 
 The images are collected using the downward-facing camera in the Array of Things (AoT)<sup>[[2](#references)]</sup> node installed on a light pole in front of the Computer Science building at Northern Illinois University (NIU).  The AoT node collect images with a resolution of 96dpi at a frequency of every second. There are a total of 2,580,468 images collected every second during October and November 2019. In 2020, the data is collected from June 29, 2020, to date for every second. Figure 1 shows a sample image from the dataset of the collected images.
 
 ## Approach
 
-![water level detection](../imgs/water-level-2.jpg)
+![water level detection](/img/science/water-level-detection/water-level-2.jpg)
 > Figure 2 – Water Level Detection Algorithm
 
 The algorithm’s detailed approach is shown in the flow chart of Figure 2 and described as follows. One image with a clear view at the bottom part of the bridge becomes the reference image. Images collected from the node are initially processed to identify whether it is a day or night image. Further, I employed a template matching algorithm to find the bridge in the image. The template matching algorithm helps to find an object in a new image based on a pre-defined template.  It works best when the template image and new image looks very similar. Since RGB/color image changes drastically under different light and weather conditions, we converted them into grayscale edge-detection images. The edges are extracted by applying the Holistically-Nested Edge Detection (HED)<sup>[[3](#references)]</sup> algorithm to the image. A template of the bottom part of the bridge is obtained from the reference image (water level information is pre-determined). This template is further used to find the location of the bridge in the images. By matching the template, the water coordinates are obtained based on the pixel values’ variations within the image. This whole process is applied to the reference image. Linear Regression is applied to the coordinates to obtain the waterline of the template to derive a reference waterline. Waterline for the new images is obtained by utilizing Linear Regression combined with a sliding window concept. The water level change is the difference between the reference water line and the water line detected in the image. Figure 3 shows the images obtained at each step in the algorithm.
 
 
-![water level detection](../imgs/water-level-3.jpg)
+![water level detection](/img/science/water-level-detection/water-level-3.jpg)
 > Figure 3 – The transformation from the original image to the detection of water level change for each stage at the algorithm.
 
 I am applying the algorithm to all the images available at this location and comparing the results to data by the United States Geological Survey<sup>[[1](#references)]</sup>.

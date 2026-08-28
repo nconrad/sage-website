@@ -1,16 +1,11 @@
 ---
 sidebar_position: 4
 sidebar_label: Dangerous Animal Detection
-keywords:
-  - Sage Summer Camp
-  - Wildlife
-  - Computer Vision
-  - Alerting
+keywords: [Sage Summer Camp, Wildlife, Computer Vision, Alerting]
+tags: [Sage Summer Camp, Wildlife, Computer Vision, Alerting]
 ---
 
 # Dangerous Animal Detection and Alerting
-
-*Sage Grande: Summer of AI 2026*
 
 **Authors:** Saurav Koduri and Avasyu Chukkapalli
 
@@ -44,7 +39,7 @@ through Twilio and a Slack message containing the annotated detection image,
 danger score, and timestamp. Each run also saves annotated images and structured
 detection metadata to a CSV file.
 
-![Dangerous animal detection and alert workflow](../imgs/summer-camp/dangerous-animal-detection/final-workflow.png)
+![Dangerous animal detection and alert workflow](/img/science/dangerous-animal-detection/final-workflow.png)
 
 ## Result
 
@@ -53,7 +48,7 @@ sequences, or images pulled from SAGE. Dangerous detections are outlined in red,
 while safe detections are outlined in green. The example below shows a leopard
 identified as dangerous, assigned track ID 23, and given a danger score of 7/10.
 
-![Leopard detected and classified as dangerous](../imgs/summer-camp/dangerous-animal-detection/leopard-detection.png)
+![Leopard detected and classified as dangerous](/img/science/dangerous-animal-detection/leopard-detection.png)
 
 ## Current Status and Next Steps
 

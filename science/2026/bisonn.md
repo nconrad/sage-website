@@ -1,16 +1,11 @@
 ---
 sidebar_position: 6
 sidebar_label: BISONN
-keywords:
-  - Sage Summer Camp
-  - Biotic Interactions
-  - BioCLIP
-  - Edge Computing
+keywords: [Sage Summer Camp, Biotic Interactions, BioCLIP, Edge Computing]
+tags: [Sage Summer Camp, Biotic Interactions, BioCLIP, Edge Computing]
 ---
 
 # Exploring the Potential for Edge Computing to Collect Novel Biotic Interaction Data
-
-*Sage Grande: Summer of AI 2026*
 
 Kyle Lima <br/>
 klima@schoodicinstitute.org <br/>
@@ -121,13 +116,13 @@ The best overall model was **BioCLIP 2.5 + Linear SVM**, achieving 98.8% accurac
 | DINOv3 Small  | Linear SVM      | 384  | 0.777  | 0.953        | 0.829         | 0.684      | 0.974   |
 | DINOv3 Small  | kNN (k=5)       | 384  | 0.853  | 0.961        | 0.762         | 0.545      | 0.979   |
 
-![Macro-F1 comparison: all backbone and head combinations. BioCLIP 2.5 + Linear SVM (highlighted) achieves the best performance at 0.935 macro-F1.](../imgs/summer-camp/bisonn/macrof1_comparison.png)
+![Macro-F1 comparison: all backbone and head combinations. BioCLIP 2.5 + Linear SVM (highlighted) achieves the best performance at 0.935 macro-F1.](/img/science/bisonn/macrof1_comparison.png)
 
 #### Confusion Matrices
 
 The confusion matrix for the best model (BioCLIP 2.5 + Linear SVM) on the 254-image test set shows strong performance on both classes — 14 of 15 mobbing images correctly detected (93.3% recall), with only 2 false positives among 239 `none` images (99.2% specificity):
 
-![Confusion matrices for all 9 combinations (3 backbones x 3 heads) plus BioCLIP zero-shot. BioCLIP 2.5 occupies the top row, DINOv3 Large the middle, DINOv3 Small the bottom.](../imgs/summer-camp/bisonn/all_confusion_matrices.png)
+![Confusion matrices for all 9 combinations (3 backbones x 3 heads) plus BioCLIP zero-shot. BioCLIP 2.5 occupies the top row, DINOv3 Large the middle, DINOv3 Small the bottom.](/img/science/bisonn/all_confusion_matrices.png)
 
 #### Key Findings
 
@@ -154,7 +149,7 @@ Camera snapshot → BioCLIP 2.5 encode (1024-dim, L2-normalized) → SVM classif
    → optionally upload annotated image for human review
 ```
 
-![BISONN plugin architecture. The plugin acquires a camera snapshot, encodes it with BioCLIP 2.5, classifies behavior with the frozen Linear SVM, identifies species via zero-shot cosine similarity to curated species text prompts, and publishes results to the Sage data pipeline.](../imgs/summer-camp/bisonn/plugin_architecture.png)
+![BISONN plugin architecture. The plugin acquires a camera snapshot, encodes it with BioCLIP 2.5, classifies behavior with the frozen Linear SVM, identifies species via zero-shot cosine similarity to curated species text prompts, and publishes results to the Sage data pipeline.](/img/science/bisonn/plugin_architecture.png)
 
 The plugin was built as a Docker container using the NVIDIA PyTorch 25.08 base image (CUDA 13.0, PyTorch 2.8) which supports the Thor's Blackwell GPU architecture (sm_110). BioCLIP 2.5 weights (~1 GB) and the SVM classifier (1.7 MB) are baked into the image at build time, enabling offline inference at runtime. The container was built with `podman` locally and side-loaded into the k3s containerd registry (15.6 GB image), bypassing the Sage ECR build system which was broken at the time of deployment.
 

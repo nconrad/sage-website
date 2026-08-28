@@ -13,18 +13,18 @@ Animals make sounds for a wide variety of reasons. They use sounds to communicat
 ## Devices
 
 ### BAR-LT
-![BAR-LT](../imgs/monitoring-bio-1.jpg)
+![BAR-LT](/img/science/monitoring-biodiversity/monitoring-bio-1.jpg)
 
 The first type of device that is being used is the battery powered bioacoustic audio recorder (BAR). These recorders can be easily fastened to trees where they blend in and constantly record audio.
 
 ### Solar BAR
-![Solar BAR](../imgs/monitoring-bio-2.jpg)
+![Solar BAR](/img/science/monitoring-biodiversity/monitoring-bio-2.jpg)
 
 The second type of device that is being used is the Solar BAR. These recorders have the same recording capabilities as the BAR-LT, but their battery is charged by a solar panel. If the are deployed in a place with consistent sunlight, they can record continuously for long periods of time.
 Device Deployment
 All audio recorders have been deployed in the Morton Arboretum, and the map seen below shows the locations of the recorders.
 
-![BAR-LT](../imgs/monitoring-bio-3.png)
+![BAR-LT](/img/science/monitoring-biodiversity/monitoring-bio-3.png)
 
 ## Benefits of the Project
 The United States does not currently have a baseline for different measurements of biodiversity that cover large areas and many species of animals. This project would allow for the development of such a baseline across the country, which would have many benefits. Such benefits include:

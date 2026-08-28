@@ -17,6 +17,7 @@ type ScienceDoc = {
 
 type ScienceYear = {
   year: string
+  label: string
   items: ScienceDoc[]
 }
 
@@ -56,9 +57,9 @@ export default function ScienceIndex() {
             setHiddenSidebarContainer={() => {}}
           />
           <main className="max-w-screen-lg mx-auto px-4 py-8 w-full">
-            {years.map(({year, items}) => (
+            {years.map(({year, label, items}) => (
               <section key={year} className="mb-12">
-                <h2 className="mb-4">{year}</h2>
+                <h2 className="mb-4">{label}</h2>
                 <div className="flex flex-wrap">
                   {items.map(doc => {
                     const name = doc.id.slice(doc.id.lastIndexOf('/') + 1)

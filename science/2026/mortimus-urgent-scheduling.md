@@ -1,16 +1,11 @@
 ---
 sidebar_position: 7
 sidebar_label: Mortimus Urgent Scheduling
-keywords:
-  - Sage Summer Camp
-  - Scheduling
-  - Edge Computing
-  - Urgent Computing
+keywords: [Sage Summer Camp, Scheduling, Edge Computing, Urgent Computing]
+tags: [Sage Summer Camp, Scheduling, Edge Computing, Urgent Computing]
 ---
 
 # Resilient Urgent Scheduling for SAGE
-
-*Sage Grande: Summer of AI 2026*
 
 Urgent computing aims to produce a useful result before that result loses its
 value. A correct decision delivered after its operational deadline can be as
@@ -100,7 +95,7 @@ The two scenes illustrate the operational change that creates urgency:
 
 | Routine landscape observation | Possible smoke event |
 |---|---|
-| ![Clear landscape used as Mortimus project context](../imgs/summer-camp/mortimus-urgent-scheduling/clear-landscape-reference.png) | ![Smoke plume used as Mortimus project context](../imgs/summer-camp/mortimus-urgent-scheduling/smoke-event-context.png) |
+| ![Clear landscape used as Mortimus project context](/img/science/mortimus-urgent-scheduling/clear-landscape-reference.png) | ![Smoke plume used as Mortimus project context](/img/science/mortimus-urgent-scheduling/smoke-event-context.png) |
 
 **In urgent computing, the right result delivered too late is the wrong result.**
 
@@ -115,7 +110,7 @@ The wider Mortimus concept connects the cameras, local inference on a SAGE
 Thor node, the scheduler, a low-bandwidth Meshtastic path, and optional Beehive
 publication:
 
-![Conceptual Mortimus, HaLow, Meshtastic, SAGE Thor, scheduler, and Beehive integration](../imgs/summer-camp/mortimus-urgent-scheduling/mortimus-orchestrator-context.png)
+![Conceptual Mortimus, HaLow, Meshtastic, SAGE Thor, scheduler, and Beehive integration](/img/science/mortimus-urgent-scheduling/mortimus-orchestrator-context.png)
 
 *Conceptual system context. Solid lines represent physically linked components;
 dotted lines represent distant request or image exchange.*

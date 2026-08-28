@@ -1,20 +1,15 @@
 ---
 sidebar_position: 13
 sidebar_label: Weather Image Classification
-keywords:
-  - Sage Summer Camp
-  - Weather
-  - Image Classification
-  - Edge Computing
+keywords: [Sage Summer Camp, Weather, Image Classification, Edge Computing]
+tags: [Sage Summer Camp, Weather, Image Classification, Edge Computing]
 ---
 
 # Calculate Edge Detection Weather AI
 
-*Sage Grande: Summer of AI 2026*
-
 A preprocessing library for selecting images based on sensor data that would be beneficial to AI preprocessing for finding images of weather and automatically using the images in a Image Classification Network.
 
-<img width="960" height="540" alt="Tornado API" src="../imgs/summer-camp/weather-image-classification/tornado-api.png" />
+![Tornado API](/img/science/weather-image-classification/tornado-api.png)
 
 <sub>In Natural Weather there are specific indicators that are indicatative before a storm</sub>
 
@@ -22,9 +17,9 @@ I picked an extreme weather event tornados as a severe event that I want to be a
 
 Image Classification models use millions of neurons to classify an image. Our cameras range in resolution, zoom, and location. I imagined it would be difficult to accurately classify images based on pure data since images would be located from areas with pretty signifigantly different geography. It is still important today if we don't predict tornados in Chicago despite how rare they are then then people and property could be injured. I think that something we have been experiencing recently is poor weather quality in Chicago. As the windy city is so appropriately named, we have a lot of air quality sensors which indicate us of harmful air quality before the event so we can remain indoors or if we have to be outdoors then properly choose respiratory equiptment based on how severe you feel about inhaling dust and irritants. For a person with asthma, I think it's good that we have warning systems.
 
-<img width="714" height="818" alt="Particulate Matter Sensor Down" src="../imgs/summer-camp/weather-image-classification/particulate-matter-sensor-down.png" />
+![Particulate Matter Sensor Down](/img/science/weather-image-classification/particulate-matter-sensor-down.png)
 
-<img width="1287" height="430" alt="Does our sensor still have life?" src="../imgs/summer-camp/weather-image-classification/sensor-life.png" />
+![Does our sensor still have life?](/img/science/weather-image-classification/sensor-life.png)
 
 Steps to create a model that will classify images.
 
@@ -63,6 +58,6 @@ Rather than wait for eruptions, volcanologists realized they could determine dor
 
 ## Project Outcomes
 
-<img width="1000" height="833" alt="Tornado Cone" src="../imgs/summer-camp/weather-image-classification/tornado-cone.png" />
+![Tornado Cone](/img/science/weather-image-classification/tornado-cone.png)
 
 Source and development space: [huggingface.co/spaces/nateseveryns/Dev](https://huggingface.co/spaces/nateseveryns/Dev).

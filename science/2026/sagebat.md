@@ -1,16 +1,11 @@
 ---
 sidebar_position: 1
-sidebar_label: SageBat
-keywords:
-  - Sage Summer Camp
-  - Bioacoustics
-  - Bats
-  - Ultrasound
+sidebar_label: Acoustic Bat Detection
+keywords: [Sage Summer Camp, Bioacoustics, Bats, Ultrasound]
+tags: [Sage Summer Camp, Bioacoustics, Bats, Ultrasound]
 ---
 
-# SageBat
-
-*Sage Grande: Summer of AI 2026*
+# Edge Acoustic Sensing for Bat Detection
 
 ## Project Overview
 
@@ -19,11 +14,11 @@ This project has three parts:
 
 - **Edge detection + classification pipeline**: band-filtering to isolate bat chirps at the edge, then off-the-shelf ML (NABat ML) for species-level classification
 
-![Identification](../imgs/summer-camp/sagebat/identification.png)
+![Identification](/img/science/sagebat/identification.png)
 
 - **Intrinsic dimensionality**: investigating bat sound spectrograms using a framework called Pairwise Distortion Distribution (PDD). The estimated intrinsic dimension is then used to analyze the latent representation learned by an autoencoder and evaluate reconstruction quality.
 
-![Pipeline](../imgs/summer-camp/sagebat/pipeline.png)
+![Pipeline](/img/science/sagebat/pipeline.png)
 
 ---
 
@@ -73,7 +68,7 @@ Three-step pipeline for turning continuous 384kHz audio into classified bat dete
 
 **Step 1 — Chirp detection via band filtering**: energy in the relevant ultrasonic band is tracked over time and thresholded against a running median (median + 8 dB) to flag candidate bat chirps against background cave/environmental noise.
 
-![chirp-detection](../imgs/summer-camp/sagebat/chirp-detection.png)
+![chirp-detection](/img/science/sagebat/chirp-detection.png)
 
 
 **Step 2 — Clip & write metadata**: each detection is clipped out and logged with metadata, e.g.:
@@ -101,7 +96,7 @@ Used the pretrained **NABat ML** model (Khalighifar et al., 2022 — deep learni
 - Cross-referenced against the known bat species list at Pinnacles National Park (14 species, e.g. Western Pipistrelle, Western Red Bat, Hoary Bat, Townsend's Big-eared Bat, Pallid Bat, Big Brown Bat, and several *Myotis* species)
 - Top predictions for the example event: **Pallid Bat** (*Antrozous pallidus*, ANPA) and **Townsend's Big-eared Bat** (*Corynorhinus townsendii*, COTO)
 
-![Identification](../imgs/summer-camp/sagebat/identification.png)
+![Identification](/img/science/sagebat/identification.png)
 
 
 **Challenges**:
@@ -144,7 +139,7 @@ Analyze how reconstruction quality changes with latent dimension and compare it 
 
 Results
 
-![Pipeline](../imgs/summer-camp/sagebat/results.png)
+![Pipeline](/img/science/sagebat/results.png)
 
 The reconstruction performance improves as the latent dimension increases until 30 as the algorithm indicates, with the reconstruction MSE decreasing rapidly at lower dimensions. Beyond a latent dimension of approximately 30, the performance plateaus, indicating that additional latent dimensions provide negligible improvement. This suggests that the intrinsic dimension of the data is around 30, beyond which the autoencoder primarily learns redundant representations.
 
