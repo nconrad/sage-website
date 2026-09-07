@@ -87,7 +87,7 @@ The image search capability integrates our [hybrid vector + keyword search syste
 - **Visual feature discovery** to identify nodes by what their cameras can see
 - **Pre-signed URL generation** for secure, authentication-free image access
 
-For details on the underlying search architecture (Florence 2, ImageBind, Weaviate, and reranking), see the [Image Search Labs page](./image-search).
+For details on the underlying search architecture (CLIP embeddings, NRP Milvus, hybrid search, and reranking), see the [Image Search Labs page](./image-search).
 
 ### Layer 5: Authentication & Security
 
