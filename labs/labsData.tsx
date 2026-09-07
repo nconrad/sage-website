@@ -4,6 +4,7 @@ import SageMCP from './img/icons/sage-mcp-icon.png'
 import HawaiiImg from './img/icons/volcano-placeholder.png'
 import ImageSearchBench from './img/icons/image-search-bench-icon.jpeg'
 import NextGenNodes from './img/icons/next-gen-node-icon.jpg'
+import AgentMining from './img/icons/agent-mining-icon.png'
 
 import { ReactNode } from 'react'
 
@@ -108,6 +109,16 @@ export const labProjects: LabProject[] = [
     image: NextGenNodes,
     imageAlt: 'icon representing next-generation Sage Grande edge nodes',
     readMoreUrl: './labs/next-gen-nodes',
+    // githubUrl: '_____add_repo_link_here____'
+  },
+
+  {
+    id: 'agent-transcript-mining',
+    title: 'Many Agents, One Better Brain',
+    description: 'Mining a week of Hermes agent transcripts from the 2026 Sage Grande summer camp to turn student debugging into a better shared profile.',
+    image: AgentMining,
+    imageAlt: 'screenshot of Hermes Terminal',
+    readMoreUrl: './labs/agent-transcript-mining',
     // githubUrl: '_____add_repo_link_here____'
   }
 ]
