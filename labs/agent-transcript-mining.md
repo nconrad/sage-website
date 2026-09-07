@@ -1,5 +1,6 @@
 ---
 sidebar_label: Many Agents, One Better Brain
+sidebar_position: 3
 ---
 
 # Many Agents, One Better Brain: Turning a Week of Debugging into a Better Shared Profile

@@ -1,5 +1,5 @@
 ---
-sidebar_label: MCP (Model Context Protocol)
+sidebar_label: Sage MCP
 sidebar_position: 2
 year: 2025
 keywords: [MCP, Model Context Protocol, LLM, Natural Language Interface, FastMCP]

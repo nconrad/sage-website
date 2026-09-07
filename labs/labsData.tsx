@@ -57,6 +57,15 @@ export const labProjects: LabProject[] = [
     githubUrl: 'https://github.com/waggle-sensor/sage-mcp'
   },
   {
+    id: 'agent-transcript-mining',
+    title: 'Many Agents, One Better Brain',
+    description: 'Mining a week of Hermes agent transcripts from the 2026 Sage Grande summer camp to turn student debugging into a better shared profile.',
+    image: AgentMining,
+    imageAlt: 'screenshot of Hermes Terminal',
+    readMoreUrl: './labs/agent-transcript-mining',
+    // githubUrl: '_____add_repo_link_here____'
+  },
+  {
     id: 'image-search-bench',
     title: 'Image Search Benchmarking',
     description: 'A scalable, AI-driven framework for evaluating and improving image search across models, databases, and domains.',
@@ -101,7 +110,6 @@ export const labProjects: LabProject[] = [
     readMoreUrl: './labs/ptz-app',
     githubUrl: 'https://github.com/waggle-sensor/ptz-app'
   },
-
   {
     id: 'next-gen-nodes',
     title: 'New Sage Grande Edge Nodes',
@@ -112,13 +120,4 @@ export const labProjects: LabProject[] = [
     // githubUrl: '_____add_repo_link_here____'
   },
 
-  {
-    id: 'agent-transcript-mining',
-    title: 'Many Agents, One Better Brain',
-    description: 'Mining a week of Hermes agent transcripts from the 2026 Sage Grande summer camp to turn student debugging into a better shared profile.',
-    image: AgentMining,
-    imageAlt: 'screenshot of Hermes Terminal',
-    readMoreUrl: './labs/agent-transcript-mining',
-    // githubUrl: '_____add_repo_link_here____'
-  }
 ]
