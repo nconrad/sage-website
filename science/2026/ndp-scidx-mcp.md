@@ -2,10 +2,12 @@
 sidebar_position: 0
 sidebar_label: Sage-NDP-SciDx MCP
 keywords: [Sage Summer Camp, MCP, National Data Platform, Live Streaming]
-tags: [Sage Summer Camp, MCP, National Data Platform, Live Streaming]
+tags: [Sage Summer Camp, Data Management, Foundation Models & LLMs]
 ---
 
 # Sage-NDP-SciDx MCP
+
+**Authors:** Pratik Kharade ([University of Utah – SCI Institute](https://sci.utah.edu)) and Sajan Neupane ([University of Utah](https://utah.edu))
 
 ## Sage MCP: Existing Capabilities
 

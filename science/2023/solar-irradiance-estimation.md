@@ -1,3 +1,8 @@
+---
+keywords: [Solar Irradiance, Image Regression, Machine Learning, Argonne National Laboratory]
+tags: [Atmospheric Science, Computer Vision]
+---
+
 # Solar Irradiance Estimation
 
 Solar energy is one of the cleanest and most renewable sources of energy in today’s day and age. Through the development of this project there can be a vast economic impact in the sense that power grid operators will be able to manage power supply much more efficiently and even begin to automate processes for solar energy generation. We created a model to estimate solar irradiance in the sky based on ground images taken from Waggle/Sage nodes. We are excepting that this application will support:

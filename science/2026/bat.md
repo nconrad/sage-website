@@ -2,15 +2,17 @@
 sidebar_position: 1
 sidebar_label: Acoustic Bat Detection
 keywords: [Sage Summer Camp, Bioacoustics, Bats, Ultrasound]
-tags: [Sage Summer Camp, Bioacoustics, Bats, Ultrasound]
+tags: [Sage Summer Camp, Ecology & Biodiversity, Acoustics & Audio, Edge AI]
 ---
 
 # Edge Acoustic Sensing for Bat Detection
 
+**Authors:** Jeongmin Chae ([University of Southern California](https://usc.edu)) and Julia Gersey ([University of Michigan](https://umich.edu) / [Argonne National Lab](https://www.anl.gov))
+
 ## Project Overview
 
 This project has three parts:
-- **`ultramic`**: a pip-installable Python package for recording from the 384kHz ultrasound mic, making it simple to add ultrasound sensing to any SAGE (or non-SAGE) edge node
+- **`ultramic`**: a pip-installable Python package for recording from the 384kHz ultrasound mic, making it simple to add ultrasound sensing to any Sage (or non-Sage) edge node
 
 - **Edge detection + classification pipeline**: band-filtering to isolate bat chirps at the edge, then off-the-shelf ML (NABat ML) for species-level classification
 

@@ -1,11 +1,13 @@
 ---
 sidebar_position: 2
-sidebar_label: Air Quality Imaging
+sidebar_label: Air Quality Intelligence
 keywords: [Sage Summer Camp, Air Quality, Computer Vision, Multimodal]
-tags: [Sage Summer Camp, Air Quality, Computer Vision, Multimodal]
+tags: [Sage Summer Camp, Atmospheric Science, Computer Vision, Multimodal Learning]
 ---
 
-# SageAir Intelligence
+# Air Quality Intelligence
+
+**Authors:** JR Lee ([Water Resources Research Center @ UH Mānoa](https://www.wrrc.hawaii.edu)), Prithviraj Pramanik ([National Institute of Technology Durgapur, India](https://www.nitdgp.ac.in) / [University of New South Wales](https://www.unsw.edu.au)), Veda Yakkali ([Rutgers University](https://rutgers.edu)), and Anastasiia Lehova ([University of Hawaiʻi at Mānoa](https://manoa.hawaii.edu))
 
 ## From Visible Atmosphere to Actionable Intelligence on Sage Nodes
 

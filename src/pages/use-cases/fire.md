@@ -1,6 +1,8 @@
 ---
 sidebar_label: Fire Science
 sidebar_position: 1
+keywords: [Wildfire, Smoke Detection, Hazard Monitoring, OHAZ, WIFIRE, NEON, Volcano]
+tags: [Wildfire, Atmospheric Science, Computer Vision, Sensors & Instrumentation, Edge AI]
 ---
 
 import Neon from './images/fire/during_burn.png'

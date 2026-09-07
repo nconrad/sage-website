@@ -2,10 +2,12 @@
 sidebar_position: 11
 sidebar_label: Image Search at the Edge
 keywords: [Sage Summer Camp, Image Search, Multimodal, Edge Computing]
-tags: [Sage Summer Camp, Image Search, Multimodal, Edge Computing]
+tags: [Sage Summer Camp, Multimodal Learning, Foundation Models & LLMs, Data Management, Edge AI]
 ---
 
 # Image Search at the Edge
+
+**Authors:** Sajan Neupane ([University of Utah](https://utah.edu)) and Pratik Kharade ([University of Utah – SCI Institute](https://sci.utah.edu))
 
 Image Search at the Edge is an offline-first, multimodal image-search system that runs
 entirely on single **NVIDIA Jetson AGX Thor**. Every image is stored as several

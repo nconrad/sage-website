@@ -1,6 +1,8 @@
 ---
 sidebar_label: Finding Events in Real Time
 sidebar_position: 1
+keywords: [Multimodal AI, Image Captioning, LLM, Real-Time Search]
+tags: [Foundation Models & LLMs, Multimodal Learning, Data Management, Edge AI]
 ---
 
 # Creating a System to Find Events in Real Time

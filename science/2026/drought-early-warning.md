@@ -2,14 +2,12 @@
 sidebar_position: 5
 sidebar_label: Drought Early Warning
 keywords: [Sage Summer Camp, Drought, Multimodal, NEON]
-tags: [Sage Summer Camp, Drought, Multimodal, NEON]
+tags: [Sage Summer Camp, Water & Hydrology, Multimodal Learning, Edge AI]
 ---
 
 # Multimodal Drought Early Warning at the Edge
 
-**Di Fan,  Levi	Johnson, John	Blackwell, Atefeh Hosseini**
-
-**Affiliation:** University of Florida, Colorado State University, University of Kansas
+**Authors:** Di Fan ([University of Florida](https://ufl.edu)), Levi Johnson ([Colorado State University](https://colostate.edu)), John Blackwell ([Colorado State University](https://colostate.edu)), and Atefeh Hosseini ([University of Kansas](https://ku.edu))
 
 
 ## Introduction
@@ -20,7 +18,7 @@ Drought affects water availability, ecosystem health, vegetation condition, agri
 
 Using these observations in near real time is not straightforward. Environmental measurements may arrive at different times, individual sensors may be temporarily unavailable, and a recent landscape image may not yet have been collected. An edge system must therefore be able to analyze the information that is currently available, communicate when evidence is incomplete, and update its assessment when new observations arrive.
 
-This project investigates multimodal drought early warning using the SAGE edge-computing ecosystem. We use the National Ecological Observatory Network (NEON) Caddo–Lyndon B. Johnson National Grasslands site (CLBJ) in north-central Texas as an initial pilot. CLBJ provides a useful combination of atmospheric, soil, and PhenoCam observations in a Southern Plains environment.
+This project investigates multimodal drought early warning using the Sage edge-computing ecosystem. We use the National Ecological Observatory Network (NEON) Caddo–Lyndon B. Johnson National Grasslands site (CLBJ) in north-central Texas as an initial pilot. CLBJ provides a useful combination of atmospheric, soil, and PhenoCam observations in a Southern Plains environment.
 
 Texas is used here as a starting example rather than the final geographic scope. Future work will extend the study to sites in Colorado, Wyoming, and other climate regions to examine how well the approach transfers across different ecosystems and sensor configurations.
 ![Edge demonstration](/img/science/drought-early-warning/figure1_motivation.png)
@@ -33,7 +31,7 @@ Instead of requiring a complete synchronized record, the prototype tracks which 
 
 The system also provides a natural-language analysis interface. The numerical forecast is generated first and then passed to a vision-language model for explanation. This design keeps the scientific prediction separate from the user-facing narrative.
 
-The current prototype supports historical replay and analysis of newly supplied observations. It has also been migrated to an NVIDIA Thor development node to evaluate whether the workflow can operate in an edge-oriented environment. Automatic subscription to deployed SAGE or NEON data streams remains future work.
+The current prototype supports historical replay and analysis of newly supplied observations. It has also been migrated to an NVIDIA Thor development node to evaluate whether the workflow can operate in an edge-oriented environment. Automatic subscription to deployed Sage or NEON data streams remains future work.
 
 ## Data
 
@@ -102,19 +100,19 @@ The dashboard should therefore be viewed as a demonstration of a possible edge w
 
 ## Future Directions
 
-The next engineering step is integration with the SAGE/Waggle software ecosystem. A native edge application could subscribe to available sensor and camera measurements, maintain a rolling causal state, run inference after meaningful updates, and publish results through the SAGE data infrastructure.
+The next engineering step is integration with the Sage/Waggle software ecosystem. A native edge application could subscribe to available sensor and camera measurements, maintain a rolling causal state, run inference after meaningful updates, and publish results through the Sage data infrastructure.
 
 The next scientific step is multi-site evaluation. Planned additions include NEON sites in Colorado and Wyoming, followed by cross-site experiments that measure transfer across climate regions, vegetation types, sensor layouts, and camera views.
 
 Future research will also examine uncertainty calibration, event-level evaluation, adaptive model selection, and resource-aware execution. Lightweight numerical inference could run whenever new measurements arrive, while more expensive visual or language analysis could be triggered only by meaningful changes or explicit user requests.
 
-This direction connects local drought early warning with the broader SAGE objective of responsive, distributed, and resource-aware artificial intelligence at the edge.
+This direction connects local drought early warning with the broader Sage objective of responsive, distributed, and resource-aware artificial intelligence at the edge.
 
 ## Code and Resources
 
-- [SAGE Project Example: Application-Agnostic Dynamic Data Collection for AI on the Edge](https://sagecontinuum.org/science/2025/dynamic-data-collection)
-- [SAGE Edge App Tutorials](https://sagecontinuum.org/docs/tutorials/edge-apps/intro-to-edge-apps)
-- [SAGE Access Waggle Sensors Tutorial](https://sagecontinuum.org/docs/tutorials/access-waggle-sensors)
+- [Sage Project Example: Application-Agnostic Dynamic Data Collection for AI on the Edge](https://sagecontinuum.org/science/2025/dynamic-data-collection)
+- [Sage Edge App Tutorials](https://sagecontinuum.org/docs/tutorials/edge-apps/intro-to-edge-apps)
+- [Sage Access Waggle Sensors Tutorial](https://sagecontinuum.org/docs/tutorials/access-waggle-sensors)
 - [Waggle Sensor GitHub](https://github.com/waggle-sensor)
 - [NEON CLBJ Field Site](https://www.neonscience.org/field-sites/clbj)
 - Project code repository: [Add repository URL]
@@ -122,4 +120,4 @@ This direction connects local drought early warning with the broader SAGE object
 
 ## Acknowledgments
 
-This project uses data provided by the National Ecological Observatory Network and edge-computing resources provided through the SAGE/Waggle ecosystem. Add team member names, mentors, institutional support, and funding acknowledgments before publication.
+This project uses data provided by the National Ecological Observatory Network and edge-computing resources provided through the Sage/Waggle ecosystem. Add team member names, mentors, institutional support, and funding acknowledgments before publication.

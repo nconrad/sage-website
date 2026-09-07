@@ -1,6 +1,7 @@
 ---
 sidebar_label: Code Generation and Documentation Search
 keywords: [LLM, RAG, AI]
+tags: [Foundation Models & LLMs, Data Management]
 sidebar_position: 2
 ---
 

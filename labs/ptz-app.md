@@ -1,6 +1,9 @@
 ---
 sidebar_label: PTZ App
 sidebar_position: 5
+year: 2025
+keywords: [PTZ Camera, YOLO, Florence 2, PlantNet, Species Identification, Wildlife Monitoring]
+tags: [Computer Vision, Object Detection & Tracking, Ecology & Biodiversity, Sensors & Instrumentation, Edge AI]
 ---
 
 import LabButtons from './components/LabButtons'

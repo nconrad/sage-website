@@ -1,3 +1,8 @@
+---
+keywords: [Lightning Detection, Atmospheric Science, DOE ARM, Software Defined Radio]
+tags: [Atmospheric Science, Sensors & Instrumentation]
+---
+
 # Lightning Science
 
 ## Overview

@@ -1,6 +1,8 @@
 ---
 sidebar_label: LIDAR for Solar Estimation and Sky Classification
 sidebar_position: 5
+keywords: [LIDAR, Solar Irradiance, Sky Classification, Machine Learning]
+tags: [Atmospheric Science, Computer Vision, Multimodal Learning, Sensors & Instrumentation]
 ---
 
 # Using LIDAR to Aid Models in Solar Estimation and Sky Classification
@@ -11,7 +13,7 @@ LIDAR technology, with its ability to create detailed maps of atmospheric enviro
 
 ## Motivation & Methods
 The goal or purpose behind this project was to develop a machine learning model using image and LiDAR data to accurately predict sky conditions and estimate solar irradiance even in the presence of ”blockers” and unfamiliar sky conditions found commonly in urban areas.
-The steps we took towards completing this goal primarily were building models, gathering data, and also understanding the data. We used the pretrained models from the PyTorch model library, specifically the ResNet models, and did transfer learning on these models for sky classification and solar irradiance. We gathered data for my datasets using the SAGE nodes in Illinois and understood what they meant by speaking to professionals on the topics.
+The steps we took towards completing this goal primarily were building models, gathering data, and also understanding the data. We used the pretrained models from the PyTorch model library, specifically the ResNet models, and did transfer learning on these models for sky classification and solar irradiance. We gathered data for my datasets using the Sage nodes in Illinois and understood what they meant by speaking to professionals on the topics.
 
 
 ## Problems & Results

@@ -1,3 +1,8 @@
+---
+keywords: [Water Level Detection, Computer Vision, Flood Monitoring, Array of Things]
+tags: [Water & Hydrology, Computer Vision]
+---
+
 # Water Level Detection
 
 by Priyanjani Chandra

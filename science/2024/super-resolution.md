@@ -1,6 +1,8 @@
 ---
 sidebar_label: Super Resolution Image Enhancement
 sidebar_position: 3
+keywords: [Super Resolution, Image Enhancement, Diffusion Models, GAN]
+tags: [Computer Vision, Edge AI]
 ---
 
 # Exploration of Super Resolution Image Enhancement

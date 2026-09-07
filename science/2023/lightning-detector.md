@@ -1,5 +1,7 @@
 ---
 sidebar_label: Lightning Detection w/ Software Defined Radio
+keywords: [Lightning Detection, Software Defined Radio, Edge Computing]
+tags: [Atmospheric Science, Sensors & Instrumentation]
 ---
 
 # Lightning Detection with Software Defined Radio

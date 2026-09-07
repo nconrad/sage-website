@@ -1,3 +1,8 @@
+---
+keywords: [Snow Classification, Image Classification, Bad River, Machine Learning]
+tags: [Atmospheric Science, Ecology & Biodiversity, Computer Vision]
+---
+
 # Snow Classifier
 
 Ice and snowfall are incredibly important parts of a river ecosystem. The Bad River is home to wild rice, which is very temperamental and prone to natural boom/bust years. Having a snow classifier can be used to create a larger dataset of snow that can be used for a variety of these additional tasks including assisting with predicting wild rice yields.

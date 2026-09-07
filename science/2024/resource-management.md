@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+keywords: [Edge Computing, Resource Management, Waggle, Power Utilization]
+tags: [Edge AI, Energy & Resource Management]
 ---
 
 # Resource Management at the Edge
@@ -36,7 +38,7 @@ The final part of our framework is a simple and flexible data pipeline that allo
 > The Framework
 
 ## Gathering Data
-Once we have developed our framework, we want to think about gathering data. Remember that one of our goals is to develop an edge computing dataset. With that in mind, we want to gather data from existing SAGE applications. These can fairly easily be run on the Waggle infrastructure and on our testbed that mimics it. That being said, there are a limited number of SAGE applications and they mostly focus on sensor data processing. To get a more holistic dataset, we can also simulate a program to collect the data that we need.
+Once we have developed our framework, we want to think about gathering data. Remember that one of our goals is to develop an edge computing dataset. With that in mind, we want to gather data from existing Sage applications. These can fairly easily be run on the Waggle infrastructure and on our testbed that mimics it. That being said, there are a limited number of Sage applications and they mostly focus on sensor data processing. To get a more holistic dataset, we can also simulate a program to collect the data that we need.
 
 In order to simulate a program, we first need to think about what a program is in theory. We can think about a program as a black box. Within the problem space of metrics gathering, we can think about this program as a time-series set of resources usages Ri where each set corresponds to a time ti. Now, to represent any program, we let this set of resources R vary within the space of available resources. Finally, to simulate all possible programs, we can vary the length of ti and the set Ri randomly. As we do this to a greater degree, we are closer to simulating all possible programs. However, since this is not possible, it suffices to randomize our data to choose uniformly from this set.
 
@@ -46,22 +48,22 @@ To simulate a program, we use existing stress tools to vary the load on the syst
 ![An image showing the relationship between container level cpu usage and power](/img/science/resource-management/resource-management-data-2.png)
 > Two plots gathered from simulating a program
 
-Now the other part of our dataset is built of SAGE applications themselves. Since we have designed our system with a black box program in mind, it is fairly straightforward to gather data from SAGE applications. All that is required are a few pieces of Waggle infrastructure and we can run SAGE applications on our test bed. Once we have these, we are able to run SAGE applications and profile their resource utilization based on the key metrics we identified earlier.
+Now the other part of our dataset is built of Sage applications themselves. Since we have designed our system with a black box program in mind, it is fairly straightforward to gather data from Sage applications. All that is required are a few pieces of Waggle infrastructure and we can run Sage applications on our test bed. Once we have these, we are able to run Sage applications and profile their resource utilization based on the key metrics we identified earlier.
 
 ![An image showing time series resource data gathered from the framework](/img/science/resource-management/resource-management-plugin-traffic.png)
-> Data gathered from monitoring a SAGE application
+> Data gathered from monitoring a Sage application
 
 Finally, the last way that we want to add variation in our dataset is through gathering data on multiple devices. The Waggle stack contains several different computation devices–including Raspberry Pis, NVIDIA Jetson NXs, and NVIDIA Jetson Nanos. To account for all of these while we gather data, it is important to apply our data gathering techniques across a variety of devices. Furthermore, the Waggle infrastructure is designed to be distributed. By gathering data from multiple devices, we can simulate a distributed network. Ultimately, making our testbed and data gathering sources simulate the Waggle ecosystem will give us the best dataset possible.
 
 ## Future Directions
 Despite our progress, we are far from answering the question: “How do we save energy at the edge?” In short, our work is the foundation for future work. I’d like to highlight two main avenues that this work should take.
 
-First, it is important to answer that question that was posed above. We have started work with a group of optimization researchers at Northwestern University to work on control of the Waggle system. Through smarter scheduling, real time control of edge computing devices, and analysis of SAGE applications, we should be able to save energy at the edge. Providing an edge computing dataset is the first step to implementing all of these solutions.
+First, it is important to answer that question that was posed above. We have started work with a group of optimization researchers at Northwestern University to work on control of the Waggle system. Through smarter scheduling, real time control of edge computing devices, and analysis of Sage applications, we should be able to save energy at the edge. Providing an edge computing dataset is the first step to implementing all of these solutions.
 
-Second, it is important for the Waggle infrastructure to develop a testing environment. During the course of my internship a SAGE migration halted almost all work for over a week. At this time, the entire SAGE/Waggle team was struggling to make progress on their work. Without physical access to the Waggle nodes, there was no environment for people to test their work. As with most infrastructures, it is important to have a testing environment for people to start their work in. Our work this summer has started the process of developing a Waggle test environment. With further development on our testbed, we would be able to simulate a Waggle node for testing purposes.
+Second, it is important for the Waggle infrastructure to develop a testing environment. During the course of my internship a Sage migration halted almost all work for over a week. At this time, the entire Sage/Waggle team was struggling to make progress on their work. Without physical access to the Waggle nodes, there was no environment for people to test their work. As with most infrastructures, it is important to have a testing environment for people to start their work in. Our work this summer has started the process of developing a Waggle test environment. With further development on our testbed, we would be able to simulate a Waggle node for testing purposes.
 
 ## Acknowledgements
-I would like to give thanks to Yongho Kim for his work as my mentor. He has been incredibly supportive and encouraging as I have completed my internship. I would also like to thank Andrew Siegel for pointing me in the direction of the SULI internship. Finally, I would like to thank all of the Waggle/SAGE team for all of their ideas and support throughout the summer.
+I would like to give thanks to Yongho Kim for his work as my mentor. He has been incredibly supportive and encouraging as I have completed my internship. I would also like to thank Andrew Siegel for pointing me in the direction of the SULI internship. Finally, I would like to thank all of the Waggle/Sage team for all of their ideas and support throughout the summer.
 
 ## References
 1. Argonne National Laboratory, Sage Continuum, https://sagecontinuum.org/

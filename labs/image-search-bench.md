@@ -1,6 +1,9 @@
 ---
 sidebar_label: Image Search Benchmarking
 sidebar_position: 3
+year: 2026
+keywords: [Benchmarking, LLM as a Judge, Evaluation, NDCG, Image Retrieval, NRP]
+tags: [Foundation Models & LLMs, Multimodal Learning, Data Management]
 ---
 
 import LabButtons from './components/LabButtons'

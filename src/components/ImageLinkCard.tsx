@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Card from '@mui/material/Card'
@@ -9,10 +10,14 @@ type LinkCardProps = {
   link: string
   alt?: string
   description?: string
+  /** Small label pinned to the top-left, e.g. a year */
+  eyebrow?: string
+  /** Small label pinned to the top-right, e.g. a "Lab" marker */
+  badge?: ReactNode
 }
 
 export default function ImageLinkCard(props: LinkCardProps) {
-  const {title, src, link, alt} = props
+  const {title, src, link, alt, eyebrow, badge} = props
   return (
     <Root>
       <Card
@@ -25,6 +30,17 @@ export default function ImageLinkCard(props: LinkCardProps) {
           alt={alt}
           className="w-[256px] h-[256px] md:w-[220px] md:h-[220px] object-cover"
         />
+        {(eyebrow || badge) &&
+          <div className="absolute top-0 left-0 right-0 z-10 flex items-start justify-between gap-2 p-2">
+            {eyebrow ?
+              <span className="rounded bg-black/60 px-1.5 py-0.5 text-xs font-semibold leading-none text-white">
+                {eyebrow}
+              </span> :
+              <span />
+            }
+            {badge}
+          </div>
+        }
         <h3 className="text-white absolute left-4 bottom-0 z-10">{title}</h3>
       </Card>
     </Root>

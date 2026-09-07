@@ -1,6 +1,9 @@
 ---
 sidebar_label: Volcano, Fire, and Anomaly Detection
 sidebar_position: 4
+year: 2026
+keywords: [Anomaly Detection, YOLOv7, Moondream, DINOv3, Volcano, Smoke Detection]
+tags: [Wildfire, Computer Vision, Object Detection & Tracking, Foundation Models & LLMs, Edge AI]
 ---
 
 import LabButtons from './components/LabButtons'

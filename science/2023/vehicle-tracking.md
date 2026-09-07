@@ -1,3 +1,8 @@
+---
+keywords: [Vehicle Tracking, Deep SORT, Object Detection, Edge Computing]
+tags: [Urban & Transportation, Computer Vision, Object Detection & Tracking, Edge AI]
+---
+
 # Vehicle Tracking
 Hi there!
 My name is Hazel Han, and I’m a graduate student at Purdue University pursuing MS in Computer and Information Technology.

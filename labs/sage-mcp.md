@@ -1,6 +1,9 @@
 ---
 sidebar_label: MCP (Model Context Protocol)
 sidebar_position: 2
+year: 2025
+keywords: [MCP, Model Context Protocol, LLM, Natural Language Interface, FastMCP]
+tags: [Foundation Models & LLMs, Data Management, Scheduling & Orchestration, Edge AI]
 ---
 
 import { Button } from '@mui/material'

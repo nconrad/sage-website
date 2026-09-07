@@ -1,3 +1,8 @@
+---
+keywords: [Water Segmentation, Computer Vision, Machine Learning, Environmental Monitoring]
+tags: [Water & Hydrology, Computer Vision]
+---
+
 # Water Segmentation
 ## Water and Our Environment
 It goes without saying that water is an important part of our environment. Water supports entire ecosystems of animals and is essential to human life. It is one of the most powerful driving forces of nature. But — as anyone who has fought a losing battling against flooding will tell you — it can also be a destructive force. Hurricanes and urban flooding can pose serious hazards to the people who live in harm’s way.1 Fortunately, however, we can utilize the power of edge computing to gather insights into the behavior of water to minimize its destruction. The Sage infrastructure will be able to equip hydrologists with the ability to study water in high-risk areas in real time.

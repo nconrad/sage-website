@@ -1,3 +1,8 @@
+---
+keywords: [Snowflake Classification, Computer Vision, Deep Learning, Argonne National Laboratory]
+tags: [Atmospheric Science, Computer Vision]
+---
+
 # Snowflake Classification
 
 Hello! My name is Neelanshi Varia and I am a student at Northwestern University pursuing MS in Artificial Intelligence. During my undergraduate studies, I performed research in applications of Machine Learning in the Remote Sensing area, Conversational Artificial Intelligence and 360-degree Computer Vision. This summer at Argonne, I am working on a very interesting problem involving snowflakes! (Yes, isn’t that cool?) I am working on the classification of habits of snowflakes on images acquired real-time during snowfall and blizzards.

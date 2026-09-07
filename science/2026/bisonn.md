@@ -1,15 +1,15 @@
 ---
 sidebar_position: 6
-sidebar_label: BISONN
+sidebar_label: Biotic Interaction
 keywords: [Sage Summer Camp, Biotic Interactions, BioCLIP, Edge Computing]
-tags: [Sage Summer Camp, Biotic Interactions, BioCLIP, Edge Computing]
+tags: [Sage Summer Camp, Ecology & Biodiversity, Computer Vision, Foundation Models & LLMs, Edge AI]
 ---
 
 # Exploring the Potential for Edge Computing to Collect Novel Biotic Interaction Data
 
 Kyle Lima <br/>
 klima@schoodicinstitute.org <br/>
-*University of Maine, Schoodic Institute at Acadia National Park* <br/>
+*[University of Maine](https://umaine.edu), [Schoodic Institute at Acadia National Park](https://schoodicinstitute.org)* <br/>
 
 
 ## Introduction

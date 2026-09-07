@@ -2,19 +2,21 @@
 sidebar_position: 10
 sidebar_label: Long-Range Low-Power Networking
 keywords: [Sage Summer Camp, Wi-Fi HaLow, Edge Computing, Low-Power Sensing]
-tags: [Sage Summer Camp, Wi-Fi HaLow, Edge Computing, Low-Power Sensing]
+tags: [Sage Summer Camp, Networking, Sensors & Instrumentation, Energy & Resource Management, Edge AI]
 ---
 
 # Sage-HaLow — First-Pass Summary
 
-**Project:** A battery-powered ESP32-S3 camera node that reaches the SAGE data
+**Authors:** Ben Owusu-Amo and Hairik Honarchian Saki ([Colorado State University](https://colostate.edu))
+
+**Project:** A battery-powered ESP32-S3 camera node that reaches the Sage data
 repository over Wi-Fi HaLow (802.11ah), at sites with no wired power and no
 usable Wi-Fi. The node scores every frame on-device and only spends radio time
 when the scene actually changed. Short-term goal: images and telemetry landing
 in Beehive from a real deployment, plus a measured answer to "how much of what
 we send is junk" — before any model gets built.
 
-SAGE Summer Camp 2026 · University of Illinois Chicago, Electronic
+Sage Summer Camp 2026 · University of Illinois Chicago, Electronic
 Visualization Laboratory (EVL).
 
 ## Hardware
@@ -22,7 +24,7 @@ Visualization Laboratory (EVL).
 - **Node:** Heltec HT-HC33 — ESP32-S3 plus a Morse Micro sub-GHz radio on one
   board. Camera, microSD, battery with a solar input.
 - **Gateway:** Heltec HT-H7608 Wi-Fi HaLow gateway.
-- **Edge:** Waggle/SAGE node H03D (`sgt-thor-1423325056007-H03D`), which runs
+- **Edge:** Waggle/Sage node H03D (`sgt-thor-1423325056007-H03D`), which runs
   the bridge plugin.
 - Camera enclosure provided by Pete for Summer Camp evaluation.
 
@@ -60,7 +62,7 @@ own capture time is used, not the receive time — so Beehive indexes an image a
 the moment it was taken, and a "last hour" query will miss a frame captured
 five hours ago.
 
-**Result:** images and telemetry are retrievable from the SAGE data repository.
+**Result:** images and telemetry are retrievable from the Sage data repository.
 
 ```
 https://storage.sagecontinuum.org/api/v1/data/Pluginctl/sage-halow-bridge-latest/00004cbb4701cbaf/1785251056000000000-20260728_150416_B43A45A45644.jpg

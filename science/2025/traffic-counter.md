@@ -1,3 +1,7 @@
+---
+keywords: [Traffic Monitoring, Object Detection, YOLO, Vehicle Tracking]
+tags: [Urban & Transportation, Computer Vision, Object Detection & Tracking, Edge AI]
+---
 
 # Traffic Counting
 

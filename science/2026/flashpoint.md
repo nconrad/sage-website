@@ -2,12 +2,14 @@
 sidebar_position: 9
 sidebar_label: Lightning-Ignition Watch
 keywords: [Sage Summer Camp, Lightning, Wildfire, Bioacoustics, Edge Computing]
-tags: [Sage Summer Camp, Lightning, Wildfire, Bioacoustics, Edge Computing]
+tags: [Sage Summer Camp, Wildfire, Atmospheric Science, Acoustics & Audio, Edge AI]
 ---
 
 # Multi-Node Lightning Localization & Wildfire Ignition Watch
 
-**Sage Summer Camp 2026 · Samuel Watson (UH Mānoa / HCDP) · Sage user `scwatson` · camp blade H03E**
+**Authors:** Samuel Watson ([University of Hawaiʻi at Mānoa](https://manoa.hawaii.edu) / [HCDP](https://www.hawaii.edu/climate-data-portal/))
+
+**Sage Summer Camp 2026 · Sage user `scwatson` · camp blade H03E**
 
 **Sage FlashPoint** turns the Sage fleet's *existing* cameras, microphones, and weather
 stations into a lightning-detection and wildfire ignition-watch system. Weather feeds arm the nodes ahead of a storm, the sky camera

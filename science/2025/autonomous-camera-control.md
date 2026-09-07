@@ -1,6 +1,8 @@
 ---
 sidebar_label: Autonomous Camera Control
 sidebar_position: 1
+keywords: [Reinforcement Learning, Computer Vision, Autonomous Cameras, Edge Computing]
+tags: [Computer Vision, Self-Supervised Learning, Sensors & Instrumentation, Edge AI]
 ---
 
 # An Autonomous Camera Control System Inspired by Curiosity
@@ -12,8 +14,8 @@ Author: Yufeng Luo, MCS Research Aide, University of Wyoming, Summer 2024
 The combination of computer vision (CV) and reinforcement learning (RL) has proven to have great potential, such as self-driving cars and autonomous robots.
 Many of those systems are inspired by human physiological or psychological phenomena, such as brain cortex structure, reasoning step, action motivation, etc.
 
-We are interested in exploring the capability of those combined systems in an edge computing environment using the SAGE framework with limitations on computing resources and communication bandwidth.
-Many SAGE nodes are in a wild environment, so the surroundings have dynamic and diverse image features.
+We are interested in exploring the capability of those combined systems in an edge computing environment using the Sage framework with limitations on computing resources and communication bandwidth.
+Many Sage nodes are in a wild environment, so the surroundings have dynamic and diverse image features.
 Inspired by human infant's eye movement to capture new information<sup>[[3](#references)]</sup>, we aim to design a CV + RL system that coevolves with the camera’s surroundings and brings unexpected and extraordinary information such as wild fire, lightning strikes, etc.
 
 Thanks to the recent development in vision transformer and its frameworks, the Image-Joint Embedding Predictive Architecture (I-JEPA) <sup>[[1](#references)]</sup> has been shown great capability for diverse computer vision tasks in self-supervised learning.
@@ -148,7 +150,7 @@ This project's inspiration comes from infant's attention mechanism and we are ai
 
 ## Acknowledgement
 
-I would like to thank my mentor Dr. Dario Dematties for many inspiring conversations and insightful advice. I would also express my gratitude to Dr. Raj Sankaran and Dr. Yongho Kim for their technical support on the camera and server systems. Finally, I want to thank SAGE team for providing this unique opportunity to let me explore in the realm of cyberphysical AI and edge computing! I have learned a lot this summer, once again!
+I would like to thank my mentor Dr. Dario Dematties for many inspiring conversations and insightful advice. I would also express my gratitude to Dr. Raj Sankaran and Dr. Yongho Kim for their technical support on the camera and server systems. Finally, I want to thank Sage team for providing this unique opportunity to let me explore in the realm of cyberphysical AI and edge computing! I have learned a lot this summer, once again!
 
 ## References
 

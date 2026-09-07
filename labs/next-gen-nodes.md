@@ -1,3 +1,9 @@
+---
+year: 2025
+keywords: [NVIDIA Jetson Thor, Edge Hardware, Thermal Characterization, Power Modes]
+tags: [Edge AI, Sensors & Instrumentation, Energy & Resource Management, Networking]
+---
+
 # Next-Generation Nodes for AI
 
 AI is moving fast, and edge hardware is getting powerful and compact. The next-generation node in Sage Grande Testbed (SGT) is built for that exact challenge: bringing high-performance AI where data is created, in the field, in real time, and at scale.

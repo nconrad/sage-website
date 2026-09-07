@@ -1,3 +1,8 @@
+---
+keywords: [Cloud Segmentation, Solar Irradiance, Machine Learning, Argonne National Laboratory]
+tags: [Atmospheric Science, Computer Vision]
+---
+
 # Characterizing Clouds
 Clouds have been widely studied in a variety of fields. The shape and distribution of clouds are not only important to modeling weather, but also to understand interactions between aerosol and cloud for weather research, and to develop environment forecasting models including radiation and cloud properties. Additionally, detecting and understanding cloud cover over the sky have been studied to estimate and forecast solar irradiance and performance of renewable solar photovoltaic energy generation. For this reason, examining solar irradiance in photovoltaic power grids has been investigated in many ways. Even though the purpose of each study is diverse, it is common that they have approached to analyze the magnitude of cloud coverage. In this context, answering how much cloud covers the sky is a striking problem along with other factors such as wind direction, speed, temperature, and other meteorological factors.
 

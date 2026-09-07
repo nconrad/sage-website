@@ -1,3 +1,8 @@
+---
+keywords: [Wildfire Detection, Image Classification, Deep Learning, Computer Vision]
+tags: [Wildfire, Computer Vision]
+---
+
 # Wildfire Classifier
 
 ![](/img/science/smoke-detection/smoke_wildfire.jpg)

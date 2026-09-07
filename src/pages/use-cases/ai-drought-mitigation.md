@@ -1,5 +1,7 @@
 ---
 sidebar_label: Drought Mitigation and Prediction
+keywords: [Drought, Soil Moisture, Precipitation, Agriculture, CoAgMET, CoCoRaHS, RAWS]
+tags: [Water & Hydrology, Atmospheric Science, Sensors & Instrumentation, Edge AI]
 ---
 
 # AI-Driven Drought Mitigation and Prediction Testbed

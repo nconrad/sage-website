@@ -1,3 +1,7 @@
+---
+keywords: [Edge Computing, Machine Learning, Bandwidth-Constrained Learning, Model Retraining]
+tags: [Edge AI, Computer Vision, Object Detection & Tracking, Networking]
+---
 
 # Bandwidth Aware Learning
 

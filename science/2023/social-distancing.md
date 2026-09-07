@@ -1,3 +1,8 @@
+---
+keywords: [Object Detection, YOLO, Computer Vision, COVID-19]
+tags: [Urban & Transportation, Computer Vision, Object Detection & Tracking]
+---
+
 # Social Distancing
 
 My name is Ori Zur and I am a rising junior at Northwestern University studying computer science and music composition. This summer at Argonne, I sought to answer the following question: how well are people following social distancing guidelines in outdoor urban environments?

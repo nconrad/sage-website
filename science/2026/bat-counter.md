@@ -2,20 +2,20 @@
 sidebar_position: 8
 sidebar_label: Bat Activity Monitoring
 keywords: [Sage Summer Camp, Bats, Computer Vision, Edge Computing]
-tags: [Sage Summer Camp, Bats, Computer Vision, Edge Computing]
+tags: [Sage Summer Camp, Ecology & Biodiversity, Computer Vision, Object Detection & Tracking, Edge AI]
 ---
 
 # Sage Bat Counter
 
-**Authors:** Noah Betoshana and Liam Fitzpatrick
+**Authors:** Noah Betoshana ([University of California, Davis](https://ucdavis.edu)) and Liam Fitzpatrick ([Michigan State University](https://msu.edu))
 
 ## Introduction
 
 Monitoring bat populations is important for understanding ecosystem health, but processing thermal video is usually done offline on a desktop or workstation after the data has already been collected. This creates a delay between collecting the data and getting useful results, and it requires storing and transferring large video files.
 
-Our project explores how an existing bat detection and tracking pipeline can be adapted for edge computing using SAGE Grande. Rather than changing the bat-counting algorithm itself, we focused on making it practical to deploy on SAGE nodes so that bat detections and counts can be generated directly where the video is captured.
+Our project explores how an existing bat detection and tracking pipeline can be adapted for edge computing using Sage Grande. Rather than changing the bat-counting algorithm itself, we focused on making it practical to deploy on Sage nodes so that bat detections and counts can be generated directly where the video is captured.
 
-The original pipeline, developed by Sarah Lagattuta, uses a pretrained YOLOv11 model together with the SORT tracking algorithm to detect, track, and count bats in thermal video. Our goal was to package this workflow for deployment on SAGE hardware while preserving the original detection and tracking capabilities.
+The original pipeline, developed by Sarah Lagattuta, uses a pretrained YOLOv11 model together with the SORT tracking algorithm to detect, track, and count bats in thermal video. Our goal was to package this workflow for deployment on Sage hardware while preserving the original detection and tracking capabilities.
 
 ![Thermal video of bats](/img/science/sage-bat-counter/thermal-video-bats.png)
 
@@ -23,7 +23,7 @@ The original pipeline, developed by Sarah Lagattuta, uses a pretrained YOLOv11 m
 
 Our objectives for the project were to:
 
-* Deploy the bat-counting pipeline on a SAGE Grande edge node.
+* Deploy the bat-counting pipeline on a Sage Grande edge node.
 * Containerize the application so it could be easily deployed on compatible hardware.
 * Support both prerecorded thermal videos and live camera streams.
 * Reduce the amount of manual setup required to run the application on a node.
@@ -31,23 +31,23 @@ Our objectives for the project were to:
 
 ## Our Work
 
-Most of our work focused on adapting software that was originally written for desktop execution to run on ARM-based SAGE hardware with NVIDIA GPU acceleration.
+Most of our work focused on adapting software that was originally written for desktop execution to run on ARM-based Sage hardware with NVIDIA GPU acceleration.
 
 We containerized the application, updated it to accept live camera input in addition to recorded videos, and worked through deployment challenges related to CUDA compatibility, ARM architecture, and GPU access inside containers. We also simplified the workflow so that running the application required only a small number of command-line arguments instead of manually configuring the environment each time.
 
-Throughout the project, we repeatedly tested the application on SAGE Grande hardware, debugging deployment issues and verifying that the original bat detection and tracking pipeline continued to function correctly after being moved to the edge.
+Throughout the project, we repeatedly tested the application on Sage Grande hardware, debugging deployment issues and verifying that the original bat detection and tracking pipeline continued to function correctly after being moved to the edge.
 
 ![Original inference pipeline with Sage plugin wrapper](/img/science/sage-bat-counter/sage-bat-counter-flowchart.jpg)
 
 ## Current Status
 
-By the end of the project, the bat-counting pipeline successfully runs on SAGE Grande inside a container while supporting both prerecorded videos and live camera input. The project demonstrates that an existing computer vision workflow can be adapted for edge deployment without requiring major changes to the underlying detection and tracking algorithms.
+By the end of the project, the bat-counting pipeline successfully runs on Sage Grande inside a container while supporting both prerecorded videos and live camera input. The project demonstrates that an existing computer vision workflow can be adapted for edge deployment without requiring major changes to the underlying detection and tracking algorithms.
 
 ![Resulting data from test video on a Sage node](/img/science/sage-bat-counter/test-results.png)
 
 ## Future Work
 
-There are still several directions that would make the system more useful for long-term deployments. Ideally, the application would start automatically whenever a SAGE node powers on, allowing it to operate without manual intervention. Additional improvements include configurable regions of interest, scheduled nightly monitoring, and automatically uploading bat counts to a central database for long-term population studies.
+There are still several directions that would make the system more useful for long-term deployments. Ideally, the application would start automatically whenever a Sage node powers on, allowing it to operate without manual intervention. Additional improvements include configurable regions of interest, scheduled nightly monitoring, and automatically uploading bat counts to a central database for long-term population studies.
 
 ## What We Learned
 

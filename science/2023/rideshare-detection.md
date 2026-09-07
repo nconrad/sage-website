@@ -1,3 +1,8 @@
+---
+keywords: [Object Detection, YOLO, Traffic Monitoring, Computer Vision]
+tags: [Urban & Transportation, Computer Vision, Object Detection & Tracking]
+---
+
 # Rideshare Sticker Detector
 
 ![rideshare oppurtunity](/img/science/rideshare-detection/rideshare1.png)

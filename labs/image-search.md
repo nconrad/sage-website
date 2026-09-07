@@ -1,6 +1,9 @@
 ---
 sidebar_label: Image Search
 sidebar_position: 1
+year: 2025
+keywords: [Hybrid Search, Semantic Search, Florence 2, ImageBind, Weaviate, Reranking]
+tags: [Foundation Models & LLMs, Multimodal Learning, Computer Vision, Data Management]
 ---
 import ImageSearchVideo from './img/image-search/Image_Search.mp4'
 import LabButtons from './components/LabButtons'

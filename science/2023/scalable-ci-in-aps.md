@@ -1,5 +1,7 @@
 ---
 sidebar_label: AI@Edge for X-ray Beamline Experiments
+keywords: [Edge Computing, X-ray Beamline, Argonne National Laboratory, Real-Time Data Processing]
+tags: [Edge AI, Data Management, Sensors & Instrumentation]
 ---
 
 # Scalable AI@Edge Computing in X-ray Beamline Experiments

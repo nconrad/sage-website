@@ -2,10 +2,12 @@
 sidebar_position: 13
 sidebar_label: Weather Image Classification
 keywords: [Sage Summer Camp, Weather, Image Classification, Edge Computing]
-tags: [Sage Summer Camp, Weather, Image Classification, Edge Computing]
+tags: [Sage Summer Camp, Atmospheric Science, Computer Vision]
 ---
 
 # Calculate Edge Detection Weather AI
+
+**Author:** Nathan Severyns ([NEIU](https://neiu.edu)
 
 A preprocessing library for selecting images based on sensor data that would be beneficial to AI preprocessing for finding images of weather and automatically using the images in a Image Classification Network.
 

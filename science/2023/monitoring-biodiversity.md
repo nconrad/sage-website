@@ -1,3 +1,7 @@
+---
+keywords: [Bioacoustics, Biodiversity Monitoring, Morton Arboretum, Acoustic Sensing]
+tags: [Ecology & Biodiversity, Acoustics & Audio, Sensors & Instrumentation]
+---
 
 # Monitoring biodiversity using acoustic data
 

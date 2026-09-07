@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+keywords: [Sound Separation, Bioacoustics, MixIT, Edge Computing]
+tags: [Ecology & Biodiversity, Acoustics & Audio, Self-Supervised Learning, Edge AI]
 ---
 
 

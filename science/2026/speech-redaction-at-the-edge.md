@@ -2,12 +2,12 @@
 sidebar_position: 12
 sidebar_label: Speech Redaction at the Edge
 keywords: [Sage Summer Camp, Privacy, Bioacoustics, Edge Computing]
-tags: [Sage Summer Camp, Privacy, Bioacoustics, Edge Computing]
+tags: [Sage Summer Camp, Privacy, Acoustics & Audio, Ecology & Biodiversity, Edge AI]
 ---
 
 # Speech Redaction at the Edge
 
-**Miguel Hernandez**, Northwestern University
+**Miguel Hernandez**, [Northwestern University](https://northwestern.edu)
 
 > Keep a Sage node listening for birds without ever recording the people
 > walking past it.

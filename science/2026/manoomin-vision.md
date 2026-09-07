@@ -1,20 +1,22 @@
 ---
 sidebar_position: 3
-sidebar_label: Manoomin Detection
+sidebar_label: Manoomin Vision
 keywords: [Sage Summer Camp, Wild Rice, BioCLIP, Phenology]
-tags: [Sage Summer Camp, Wild Rice, BioCLIP, Phenology]
+tags: [Sage Summer Camp, Ecology & Biodiversity, Computer Vision, Foundation Models & LLMs]
 ---
 
-# Manoomin Detection — First-Pass Summary
+# Manoomin Vision
+
+**Authors:** Jordan Gurneau ([Northwestern University](https://northwestern.edu)), Ella Neumann ([Georgia Tech](https://gatech.edu) / [MIT](https://mit.edu)), Dave MacDonald ([UC Davis](https://ucdavis.edu)), Deanna DiMonte ([Northwestern University](https://northwestern.edu)), and Morty (lead)
 
 **Project:** Using vision models to track wild rice (manoomin / *Zizania palustris*)
-life-stage across a growing season, from a fixed SAGE edge-node camera (W083,
+life-stage across a growing season, from a fixed Sage edge-node camera (W083,
 Bad River marsh). Short-term goal: a small-scale test (10-150 images) producing
 real data/analysis before scaling to the full multi-year dataset.
 
 ## Data
 
-- **Source:** SAGE node W083 bottom camera, pulled via the SAGE data API
+- **Source:** Sage node W083 bottom camera, pulled via the Sage data API
   (public metadata + authenticated image download).
 - **Pull:** one midday frame (best light, ~13:00 local) per date across the
   2025 growing season, May 1 – Sep 30 → **146 dates, 146 images, 0 failures**.
