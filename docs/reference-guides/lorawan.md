@@ -54,7 +54,7 @@ Please note that signal range is highly dependent on environmental conditions. W
 
 Although these results are specific to Argonne, they serve as a useful reference for what you can expect when using our typical LoRaWAN hardware.
 
-<iframe src="/html/lorawan_packet_map.html" width="100%" height="600"></iframe>
+<iframe src="/html/lorawan/lorawan_packet_map.html" width="100%" height="600"></iframe>
 >NOTE: The map is interactive, allowing you to zoom in and out to explore specific areas. You can also click on individual pins to view detailed results for that location, including metrics broken down by packet size and spreading factor. The pop-up will display average [RSSI](https://www.thethingsnetwork.org/docs/lorawan/rssi-and-snr/#rssi), average [SNR](https://www.thethingsnetwork.org/docs/lorawan/rssi-and-snr/#snr), and packet loss ratio.
 
 To see the full results, including the raw data used to generate this map, please visit our [GitHub repository](https://github.com/waggle-sensor/Lorawan-Packet-Test).
